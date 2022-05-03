@@ -78,14 +78,14 @@
                         foreach ($resultado as $datos) {
                         ?>
                             <tr>
-                            <td><?php echo $datos[0] ?></td>
-                            <td><?php echo $datos[1] ?></td>
-                            <td><?php echo $datos[2] ?></td>
-                            <td><?php echo $datos[3] ?></td>
-                            <td><?php echo $datos[4] ?></td>
-                            <td><?php echo $datos[5] ?></td>
-                            <td><a href="frmEditar.php?id=<?php echo $datos[0] ?>" type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a></td>
-                        <!-- <td><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></td> -->
+                            <td><?php echo $datos->id ?></td>
+                            <td><?php echo $datos->nombre ?></td>
+                            <td><?php echo $datos->apellidos ?></td>
+                            <td><?php echo $datos->email ?></td>
+                            <td><?php echo $datos->telefono ?></td>
+                            <td><?php echo $datos->movil ?></td>
+                            <td><a href="frmEditar.php?id=<?php echo $datos->id ?>" type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i>Editar</a></td>
+                            <td><a href="crud/eliminarContacto.php?id=<?php echo $datos->id ?>" type="button" class="btn btn-danger"><i class="bi bi-trash"></i>Eliminar</a></td> 
                             </tr>
                         <?php } ?>
                     </tbody>
