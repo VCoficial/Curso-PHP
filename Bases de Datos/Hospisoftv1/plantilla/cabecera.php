@@ -50,21 +50,21 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="panel.php">
               <span data-feather="home"></span>
               Inicio
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php">
+            <a class="nav-link" href="medicos.php">
               <span data-feather="file"></span>
-              Contacto
+              Medicos
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="productos.php">
+            <a class="nav-link" href="pacientes.php">
               <span data-feather="shopping-cart"></span>
-              Productos
+              Pacientes
             </a>
           </li>
           <li class="nav-item">
