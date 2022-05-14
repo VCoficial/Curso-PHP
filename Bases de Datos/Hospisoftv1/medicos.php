@@ -60,7 +60,7 @@ require_once 'plantilla/cabecera.php';
                                 <td><?php echo $datos->apellidos_medico ?></td>
                                 <td><?php echo $datos->email ?></td>
                                 <td><?php echo $datos->especialidad ?></td>
-                                <td> <a href="frmEditar.php?id=<?php echo $datos->id_medico ?>" type="button" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a> </td>
+                                <td> <a href="frmEditarMedicos.php?id=<?php echo $datos->id_medico ?>" type="button" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a> </td>
                                 <td> <a href="app/eliminarMedico.php?id=<?php echo $datos->id_medico ?>" type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a> </td>
                             </tr>
                         <?php  } ?>

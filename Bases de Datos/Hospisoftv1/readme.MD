@@ -51,3 +51,10 @@ en este casoo agregamos el parametro PDO::FETCH_OBJ para que la consulta nos dev
 
 El favicon se puede descargar cualquier icono en formato .ico
 https://realfavicongenerator.net/
+
+# AVANCE MAYO 14 2022
+1.Organizar el menu del panel con usuario activo
+2.Implementar el sistema de mensajes de la aplicacion (Variables de SESION)
+3.Registro y encriptacion del paciente (Algoritmos de Hashing)
+4.Login del paciente
+5.Historias de usuario (Territorium)---- scrum
