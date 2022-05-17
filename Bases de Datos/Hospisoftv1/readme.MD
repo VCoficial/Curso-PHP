@@ -55,6 +55,13 @@ https://realfavicongenerator.net/
 # AVANCE MAYO 14 2022
 1.Organizar el menu del panel con usuario activo
 2.Implementar el sistema de mensajes de la aplicacion (Variables de SESION)
-3.Registro y encriptacion del paciente (Algoritmos de Hashing)
+3.Registro y encriptacion del paciente (Algoritmos de Hashing)-Validacion de datos del lado del servidor
 4.Login del paciente
 5.Historias de usuario (Territorium)---- scrum
+
+# Validación PHP
+trim() // limpie espacios en blanco all inicio y al final
+filter_() con los filtros
+https://www.php.net/manual/en/filter.filters.sanitize.php
+
+# Algoritmos de encriptación .....bcrypt

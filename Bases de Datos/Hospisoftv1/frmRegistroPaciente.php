@@ -61,25 +61,26 @@
                 <div class="col-md-5">
                     <div class="card mt-3">
                         <div class="card-body">
-                            <form action="crud/insertarPaciente.php" method="POST">
+                            <div class="card-title">REGISTRO DE PACIENTES</div>
+                            <form action="app/insertarPaciente.php" method="POST">
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre</label>
                                     <input type="text" class="form-control" name="nombre" id="nombre">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nombre" class="form-label">Apellido</label>
+                                    <label for="apellidos" class="form-label">Apellido</label>
                                     <input type="text" class="form-control" name="apellidos" id="apellidos">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nombre" class="form-label">Email</label>
+                                    <label for="email" class="form-label">Email</label>
                                     <input type="text" class="form-control" name="email" id="email">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nombre" class="form-label">Telefono</label>
+                                    <label for="telefono" class="form-label">Telefono</label>
                                     <input type="text" class="form-control" name="telefono" id="telefono">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nombre" class="form-label">Movil</label>
+                                    <label for="movil" class="form-label">Movil</label>
                                     <input type="text" class="form-control" name="movil" id="movil">
                                 </div>
                         </div>
@@ -94,7 +95,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="eps" class="form-label">E.P.S</label>
-                                <input type="eps" class="form-control" name="eps" id="eps">
+                                <input type="text" class="form-control" name="eps" id="eps">
                             </div>
                             <div class="mb-3">
                                 <label for="usuario" class="form-label">Usuario del Sistema</label>
