@@ -1,4 +1,10 @@
 <?php 
+/* la empresa de servicios públicos de nuestra ciudad calcula la factura del consumo de agua de
+acuerdo con la tabla de estratos adjunta. Se requiere determinar el pago que debe realizar una
+persona por el total de metros cúbicos que consume al llenar una piscina (ver figura), la
+liquidación consiste en multiplicar los metros cubos por el valor del metro de acuerdo con el
+estrato correspondiente. Realice una WebApp que solucione dicho problema.  */
+
 $estrato=$_POST['estrato'];
 $metro=$_POST['metro'];
 $valor=0;
