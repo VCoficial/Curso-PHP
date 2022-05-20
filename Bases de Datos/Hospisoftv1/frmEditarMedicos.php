@@ -34,7 +34,7 @@ echo '</pre>'; */
                 <div class="card">
                     <h3>Actualizar Medico</h3>
                     <div class="card-body">
-                        <form action="app/actualizarMedico.php" method="POST">
+                        <form action="app/actualizarMedicos.php" method="POST">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">ID</label>
                                 <input type="text" class="form-control" name="id" id="id" value="<?php echo $medico->id_medico; ?>" readonly>
