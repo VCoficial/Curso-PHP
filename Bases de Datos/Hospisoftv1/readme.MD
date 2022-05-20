@@ -65,3 +65,23 @@ filter_() con los filtros
 https://www.php.net/manual/en/filter.filters.sanitize.php
 
 # Algoritmos de encriptación .....bcrypt
+
+password_hash()
+
+# TIPOS DE ERRORES
+
+https://manuales.guebs.com/php/errorfunc.constants.html
+NOTICE = Advertencia de posible error
+WARNING = Error no tan grave, no rompe la ejecucion del Script
+ERROR = Fatales, paran el script (tumban el sistema)
+
+# Variables de SESIÓN
+Debido a que el protocolo HTTP es sin estado (stateless), no guarda las variables entre diferentes programas.
+Es necesario crear variables de sesion; esta se crean como un arreglo dentro del navegador, para poderlas usar mientras el uso del navegador este activo (sesión).
+Las defino es PHP con session_start() ... 
+
+$_SESSION['nombrevariable']="valor asignado"
+
+# Archivos HTACCESS
+
+Me sirven para configurar el servidor web (APACHE) Ojo! existe otro servidor y es el NGINX (Este corre en linux) == dicen que es el mas rapido

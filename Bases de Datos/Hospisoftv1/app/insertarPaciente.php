@@ -19,14 +19,19 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 //----------------------------------------------------------------
 
 // hacer el proceso de request - response
-
 $sql = 'INSERT INTO paciente(nombre_paciente,apellidos_paciente,email_paciente,telefono_paciente,movil_paciente,fecha_nace_paciente,eps_paciente,usuario_paciente,password_paciente)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ';
 $sentencia = $pdo->prepare($sql); //prepara consulta
 $sentencia->execute([$nombre, $apellido, $email, $telefono, $movil, $fecha, $eps, $usuario, $password]); //ejecuta la sentencia SQL 
 
-//var_dump($sentencia->rowCount());
+if($sentencia->rowCount()>=1){
+    $_SESSION['tipo']='primary';
+    $_SESSION['mensaje']='Operación Exitosa';
+}else{
+    $_SESSION['tipo']='danger';
+    $_SESSION['mensaje']='Ha ocurrido un error en la inserción !';
+};
 
-$result=$_SESSION['¡INSERCIÓN EXITOSA!'];
+//$result=$_SESSION['¡INSERCIÓN EXITOSA!'];
 
 header('Location:../frmRegistroPaciente.php');
