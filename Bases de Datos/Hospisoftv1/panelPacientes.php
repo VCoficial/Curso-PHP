@@ -13,7 +13,7 @@ if (!isset($_SESSION['usuarioActivo'])) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center">
-                    <img src="images/médicos-influencers-en-Instagram.jpg" class="img-fluid">
+                    <img src="https://p4.wallpaperbetter.com/wallpaper/542/894/345/plague-doctors-crow-plague-raven-wallpaper-preview.jpg" class="img-fluid">
                 </div>
                 <div class="col-md-6">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. At quia accusantium atque earum maxime obcaecati. Culpa fuga reiciendis blanditiis cumque suscipit, nobis unde, quos, nam exercitationem fugiat sint libero modi.

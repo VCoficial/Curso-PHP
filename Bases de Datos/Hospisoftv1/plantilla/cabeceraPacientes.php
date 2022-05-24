@@ -73,7 +73,7 @@
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="panel.php">
+              <a class="nav-link" aria-current="page" href="panelPacientes.php">
                 <span data-feather="home"></span>
                 Inicio
               </a>
@@ -85,7 +85,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="frmAgendarMedico.php">
+              <a class="nav-link" href="frmAgendarCita.php">
                 <span data-feather="shopping-cart"></span>
                 Agendar Cita con Medico
               </a>
