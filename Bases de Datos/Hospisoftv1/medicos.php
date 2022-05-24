@@ -1,5 +1,5 @@
 <?php
-require_once 'plantilla/cabecera.php';
+require_once 'plantilla/cabeceraPacientes.php';
 error_reporting(0);
 ?>
 <!-- INICIO DEL CONTENIDO -->

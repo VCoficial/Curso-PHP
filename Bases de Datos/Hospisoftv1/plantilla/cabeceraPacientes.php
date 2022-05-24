@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.88.1">
-  <title>Dashboard Template · Bootstrap v5.1</title>
+  <title>Panel Paciente</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <!-- Bootstrap core CSS -->
@@ -55,14 +55,15 @@
       <li class="nav-item">
         <a class="nav-link bg-dark text-light" href="#"><i class="bi bi-person-circle">
           <b>
-            <?php echo 'El Usuario';
+            <?php 
+            echo $_SESSION['usuarioActivo'];
             ?>
           </b>
           </i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link bg-dark text-light" href="index.php"><i class="bi bi-box-arrow-right"> Salir del Sistema</i></a>
+        <a class="nav-link bg-dark text-light" href="cerrarSistema.php"><i class="bi bi-box-arrow-right"> Salir del Sistema</i></a>
       </li>
     </ul>
   </header>
@@ -72,71 +73,27 @@
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="panel.php">
+              <a class="nav-link" aria-current="page" href="panel.php">
                 <span data-feather="home"></span>
                 Inicio
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="medicos.php">
+              <a class="nav-link" href="app/listaMedicosEspecialidad.php">
                 <span data-feather="file"></span>
-                Medicos
+                Listar Medicos por especialidad
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pacientes.php">
+              <a class="nav-link" href="frmAgendarMedico.php">
                 <span data-feather="shopping-cart"></span>
-                Pacientes
+                Agendar Cita con Medico
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="users"></span>
-                Customers
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
-                Reports
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-                Integrations
-              </a>
-            </li>
-          </ul>
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Saved reports</span>
-            <a class="link-secondary" href="#" aria-label="Add a new report">
-              <span data-feather="plus-circle"></span>
-            </a>
-          </h6>
-          <ul class="nav flex-column mb-2">
-            <li class="nav-item">
-              <a class="nav-link" href="">
-                <span data-feather="file-text"></span>
-                Current month
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Last quarter
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Social engagement
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Year-end sale
+                Imprimir Historia Clinica
               </a>
             </li>
           </ul>

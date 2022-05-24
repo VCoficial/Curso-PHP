@@ -168,24 +168,27 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="Usuario" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="usuario" aria-describedby="usuarioHelp">
-                            <div id="usuarioHelp" class="form-text">Ingrese su usuario registrado en el sistema</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="Password" class="form-label">Password</label>
-                            <input type="password" class="form-control" name="password">
-                        </div>
-                        <a href="frmRegistroPaciente.php"> ¿Aun no tiene cuenta? Registrese Aqui</a>
+                        <form action="app/validarIngresoPaciente.php" method="post">
+                            <div class="mb-3">
+                                <label for="Usuario" class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="usuario" name="usuario" aria-describedby="usuarioHelp">
+                                <div id="usuarioHelp" class="form-text">Ingrese su usuario registrado en el sistema</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Password" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password">
+                            </div>
+                            <a href="frmRegistroPaciente.php"> ¿Aun no tiene cuenta? Registrese Aqui</a>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <input type="reset" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancelar">
+                        <input type="submit" class="btn btn-primary" value="Enviar">
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -57,7 +57,7 @@ https://realfavicongenerator.net/
 2.Implementar el sistema de mensajes de la aplicacion (Variables de SESION)
 3.Registro y encriptacion del paciente (Algoritmos de Hashing)-Validacion de datos del lado del servidor
 4.Login del paciente
-5.Historias de usuario (Territorium)---- scrum
+5.Historias de Usuario (Territorium)---- scrum
 
 # Validación PHP
 trim() // limpie espacios en blanco all inicio y al final
@@ -80,8 +80,15 @@ Debido a que el protocolo HTTP es sin estado (stateless), no guarda las variable
 Es necesario crear variables de sesion; esta se crean como un arreglo dentro del navegador, para poderlas usar mientras el uso del navegador este activo (sesión).
 Las defino es PHP con session_start() ... 
 
-$_SESSION['nombrevariable']="valor asignado"
-
 # Archivos HTACCESS
 
 Me sirven para configurar el servidor web (APACHE) Ojo! existe otro servidor y es el NGINX (Este corre en linux) == dicen que es el mas rapido
+
+# git y Github
+
+Recordar revisar siempre la credenciales del github en el PC PANEL CONTROL -> Cuentas Usuario -> Administrador Credenciales -> Credenciales Windows
+
+# SEGUNDO SPRINT
+
+Libreria de reportes
+
