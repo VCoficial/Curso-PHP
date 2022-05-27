@@ -41,7 +41,7 @@
                             <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house-heart-fill"> Inicio</i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="panel.php"><i class="bi bi-info-square-fill"> Acerca de</i></a>
+                            <a class="nav-link" href=""><i class="bi bi-info-square-fill"> Acerca de</i></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="bi bi-journal-plus"> Citas</i></a>

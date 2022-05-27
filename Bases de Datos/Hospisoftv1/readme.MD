@@ -88,7 +88,12 @@ Me sirven para configurar el servidor web (APACHE) Ojo! existe otro servidor y e
 
 Recordar revisar siempre la credenciales del github en el PC PANEL CONTROL -> Cuentas Usuario -> Administrador Credenciales -> Credenciales Windows
 
-# SEGUNDO SPRINT
+# SEGUNDO SPRINT 24/05/2022
 
-Libreria de reportes
+Libreria de reportes en PDF FPDF
+registro de citas (llaves compuestas)
+imprimir cita
+listar la historia clinica por cada paciente
+listar medicos por especialidad
+actualizar perfil
 

@@ -18,6 +18,7 @@ $paciente = $sentencia->fetch(PDO::FETCH_OBJ);
 if (!password_verify($password, $paciente->password_paciente)) {
     header('Location:../index.php');
 } else {
+    $_SESSION['idUsuario']= $paciente->id_paciente;
     $_SESSION['usuarioActivo'] = $paciente->usuario_paciente;
     header('Location:../panelPacientes.php');
 }
