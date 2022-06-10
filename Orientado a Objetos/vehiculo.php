@@ -30,11 +30,20 @@ class Vehiculo{
     {
         return "la placa de su vehiculo es : ".$this->placa;
     }
-
+    //return bool
+    public function mostrarEstadoTraccion(){
+        if($this->tieneTraccion){
+            return 'SI TIENE TRACCION';
+        }
+        else
+        {
+            return 'NO TIENE TRACCION';
+        };
+    }
     //Instalar extension "PHP Getters & Setters" - phproberto
 }
 
-//fin de la clase
-$moto = new Vehiculo(2,"Vdk89",0,true);
-
+$moto = new Vehiculo(2,"Vdk89",0,true); //instanciar la clase
 echo $moto->mostrarPlaca();
+echo '<br>';
+echo $moto->mostrarEstadoTraccion();
