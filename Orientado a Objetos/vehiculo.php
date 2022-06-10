@@ -1,11 +1,10 @@
 <?php
-/*
-Clase Base del proyecto
-@author andres
-@version 1.0 junio de 2022
-@copyright novanet s.a.s
-https://github.com/VCoficial
-*/
+/**
+*Clase Base del proyecto
+*@author Andres;
+*@version 1.0 junio de 2022
+*@copyright novanet s.a.s
+* **/
 
 class Vehiculo{
     //atributos de la clase
@@ -43,7 +42,7 @@ class Vehiculo{
     //Instalar extension "PHP Getters & Setters" - phproberto
 }
 
-$moto = new Vehiculo(2,"Vdk89",0,true); //instanciar la clase
+/* $moto = new Vehiculo(2,"Vdk89",0,true); //instanciar la clase
 echo $moto->mostrarPlaca();
 echo '<br>';
-echo $moto->mostrarEstadoTraccion();
+echo $moto->mostrarEstadoTraccion(); */
