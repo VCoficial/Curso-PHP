@@ -13,14 +13,16 @@ class Vehiculo{
     private string $placa;
     protected int $numeroPuertas;
     private bool $tieneTraccion; //el vehiculo tiene traccion en las 4 ruedas
+    public static string $color;
     //metodos de la clase
     //metodo magico para crear la clase - metodo constructor
-    public function __construct($numeroRuedas,$placa, $numeroPuertas, $tieneTraccion)
+    public function __construct($numeroRuedas,$placa, $numeroPuertas, $tieneTraccion, $color)
     {   
         $this->numeroRuedas=$numeroRuedas;
         $this->placa=$placa;
         $this->numeroPuertas=$numeroPuertas;
         $this->tieneTraccion=$tieneTraccion;
+        self:: $color=$color;
     }
 
     //metodo getter de la clase
@@ -39,10 +41,17 @@ class Vehiculo{
             return 'NO TIENE TRACCION';
         };
     }
-    //Instalar extension "PHP Getters & Setters" - phproberto
-}
 
-/* $moto = new Vehiculo(2,"Vdk89",0,true); //instanciar la clase
+    public function mostrarColor()
+        {
+            return "el color de su vehiculo es : ".self::$color;
+        }
+            //Instalar extension "PHP Getters & Setters" - phproberto
+    }
+
+$moto = new Vehiculo(2,"Vdk89",0,true, "rojo"); //instanciar la clase
 echo $moto->mostrarPlaca();
 echo '<br>';
-echo $moto->mostrarEstadoTraccion(); */
+echo $moto->mostrarEstadoTraccion();
+echo '<br>';
+echo $moto->mostrarColor();
