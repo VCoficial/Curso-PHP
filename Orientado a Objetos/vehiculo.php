@@ -24,17 +24,17 @@ class Vehiculo{
         $this->tieneTraccion=$tieneTraccion;
     }
 
+    //metodo getter de la clase
+    //return string
     public function mostrarPlaca()
     {
-
+        return "la placa de su vehiculo es : ".$this->placa;
     }
 
     //Instalar extension "PHP Getters & Setters" - phproberto
 }
 
 //fin de la clase
-$suzuki = new Vehiculo(4,"Vdk89",2,true);
-$mazda3 = new Vehiculo(4,"Seta",4,false);
-$bws = new Vehiculo(2,"qteimporta",0,false);
+$moto = new Vehiculo(2,"Vdk89",0,true);
 
-var_dump($mazda3);
+echo $moto->mostrarPlaca();
