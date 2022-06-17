@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuarioActivo'])) {
 } else {
     require_once 'app/listaMedicos.php';
     require_once 'plantilla/cabeceraPacientes.php';
-    var_dump($_SESSION['idUsuario']);
+    var_dump($_SESSION['idPaciente']);
 ?>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -62,8 +62,8 @@ if (!isset($_SESSION['usuarioActivo'])) {
                                     <select name="medico" id="medico">
                                         <!-- plantillas php para html con Php puro -->
                                         <?php foreach ($resultado as $medico) : ?>
-                                            <option value="<?php echo $medico->id_medico; ?>">
-                                                <?php echo $medico->nombre_medico . ' ' . $medico->apellidos_medico ?>
+                                            <option value="<?php echo $medico->idMedico; ?>">
+                                                <?php echo $medico->nombreMedico . ' ' . $medico->apellidosMedico ?>
                                             </option>
                                         <?php endforeach; ?>
                                     </select>
@@ -74,7 +74,7 @@ if (!isset($_SESSION['usuarioActivo'])) {
                                 </div>
                                 <div class="mb-3">
                                     <label for="medico">Usuario</label>
-                                    <input type="text" name="paciente" id="paciente" readonly value="<?php echo $_SESSION['idUsuario']; ?>">
+                                    <input type="text" name="paciente" id="paciente" readonly value="<?php echo $_SESSION['idPaciente']; ?>">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Agendar</button>
                             </form>

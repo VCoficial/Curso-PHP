@@ -1,10 +1,14 @@
 <?php
-
+session_start();
+error_reporting(0);
+if (!isset($_SESSION['usuarioActivo'])) {
+    header('Location:index.php');
+} else {
 $id = $_GET['id'];
 // echo $id;
 
 require_once 'app/bd.php';
-$sql = 'SELECT * FROM medico where id_medico = ?';
+$sql = 'SELECT * FROM medico where idMedico = ?';
 $sentencia = $pdo->prepare($sql);  //prepara consulta 
 $sentencia->execute([$id]); //ejecuta la sentencia sql
 $medico = $sentencia->fetch(PDO::FETCH_OBJ); //devuelve la fila con el resultado de la consulta
@@ -71,3 +75,7 @@ echo '</pre>'; */
 </body>
 
 </html>
+
+<?php 
+}
+?>

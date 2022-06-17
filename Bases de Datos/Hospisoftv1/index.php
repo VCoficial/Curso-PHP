@@ -44,16 +44,16 @@
                             <a class="nav-link" href=""><i class="bi bi-info-square-fill"> Acerca de</i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="bi bi-journal-plus"> Citas</i></a>
+                            <a class="nav-link" href=""><i class="bi bi-journal-plus"> Citas</i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="bi bi-people-fill"> Contacto</i></a>
+                            <a class="nav-link" href=""><i class="bi bi-people-fill"> Contacto</i></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#frmLogin"><i class="bi bi-key-fill"> Login</i></a>
                         </li>
                     </ul>
-
+                    <a class="nav-link text-light" href="" data-bs-toggle="modal" data-bs-target="#frmLoginmedico"><i class="bi bi-person-rolodex"> Medico</i></a>
                 </div>
             </div>
         </nav>
@@ -159,7 +159,38 @@
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Modal Medico -->
+        <div class="modal fade" id="frmLoginmedico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login de Medico</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="app/validarIngresoMedico.php" method="POST">
+                            <div class="mb-3">
+                                <label for="usuario" class="form-label">Identificacion</label>
+                                <input type="text" class="form-control" id="identificacion" name="identificacion" aria-describedby="usuarioHelp">
+                                <div id="usuarioHelp" class="form-text">Ingrese su usuario registrado en el sistema</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password">
+                            </div>
+                            <a href="frmRegistroPaciente.php">¿Aun no tiene cuenta? Registrese aqui</a>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="reset" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancelar">
+                        <input type="submit" class="btn btn-primary" value="Guardar">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!-- Cierre modal del Medico -->
+
+        <!-- Modal Login-->
         <div class="modal fade" id="frmLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -176,7 +207,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="Password" class="form-label">Password</label>
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control" name="password" id="password">
                             </div>
                             <a href="frmRegistroPaciente.php"> ¿Aun no tiene cuenta? Registrese Aqui</a>
                     </div>
@@ -188,7 +219,7 @@
                 </div>
             </div>
         </div>
-
+    <!-- Cierre modal del login -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

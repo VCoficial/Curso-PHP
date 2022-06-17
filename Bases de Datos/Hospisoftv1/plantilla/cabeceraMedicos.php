@@ -73,19 +73,19 @@
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="panel.php">
+              <a class="nav-link" aria-current="page" href="panelMedicos.php">
                 <span data-feather="home"></span>
                 Inicio
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="medicos.php">
+              <a class="nav-link" href="Medicos.php">
                 <span data-feather="file"></span>
                 Medicos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pacientes.php">
+              <a class="nav-link" href="frmEditarPacientes.php">
                 <span data-feather="shopping-cart"></span>
                 Pacientes
               </a>

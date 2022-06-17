@@ -19,8 +19,7 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 //----------------------------------------------------------------
 
 // hacer el proceso de request - response
-$sql = 'INSERT INTO paciente(nombre_paciente,apellidos_paciente,email_paciente,telefono_paciente,movil_paciente,fecha_nace_paciente,eps_paciente,usuario_paciente,password_paciente)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ';
+$sql = 'INSERT INTO pacientes (nombrePaciente, apellidoPaciente, emailPaciente, telefonoPaciente,movilPaciente,fechaNacimiento,epsPaciente,userPaciente,passwordPaciente) VALUES (?,?,?,?,?,?,?,?,?);';
 $sentencia = $pdo->prepare($sql); //prepara consulta
 $sentencia->execute([$nombre, $apellido, $email, $telefono, $movil, $fecha, $eps, $usuario, $password]); //ejecuta la sentencia SQL 
 

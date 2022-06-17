@@ -1,6 +1,10 @@
 <?php
-require_once 'plantilla/cabeceraPacientes.php';
+session_start();
 error_reporting(0);
+if (!isset($_SESSION['usuarioActivo'])) {
+    header('Location:index.php');
+} else {
+    require_once 'plantilla/cabeceraMedicos.php';
 ?>
 <!-- INICIO DEL CONTENIDO -->
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -30,7 +34,10 @@ error_reporting(0);
                                 <label for="nombre" class="form-label">Especialidad</label>
                                 <input type="text" class="form-control" name="especialidad" id="especialidad">
                             </div>
-
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" id="password">
+                            </div>
                             <button type="submit" class="btn btn-primary"><i class="bi bi-save-fill"></i></button>
                         </form>
                     </div>
@@ -56,13 +63,13 @@ error_reporting(0);
                         foreach ($resultado as $datos) {
                         ?>
                             <tr>
-                                <td><?php echo $datos->id_medico ?></td>
-                                <td><?php echo $datos->nombre_medico ?></td>
-                                <td><?php echo $datos->apellidos_medico ?></td>
-                                <td><?php echo $datos->email ?></td>
-                                <td><?php echo $datos->especialidad ?></td>
-                                <td> <a href="frmEditarMedicos.php?id=<?php echo $datos->id_medico ?>" type="button" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a> </td>
-                                <td> <a href="app/eliminarMedico.php?id=<?php echo $datos->id_medico ?>" type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a> </td>
+                                <td><?php echo $datos->idMedico ?></td>
+                                <td><?php echo $datos->nombreMedico ?></td>
+                                <td><?php echo $datos->apellidosMedico ?></td>
+                                <td><?php echo $datos->emailMedico ?></td>
+                                <td><?php echo $datos->especialidadMedico ?></td>
+                                <td> <a href="frmEditarMedicos.php?id=<?php echo $datos->idMedico ?>" type="button" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a> </td>
+                                <td> <a href="app/eliminarMedico.php?id=<?php echo $datos->idMedico ?>" type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a> </td>
                             </tr>
                         <?php  } ?>
                     </tbody>
@@ -76,4 +83,5 @@ error_reporting(0);
 
     <?php
     require_once 'plantilla/footer.php';
+}
     ?>

@@ -16,7 +16,7 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 //----------------------------------------------------------------
 
 // hacer el proceso de request - response
-$sql = 'INSERT INTO agenda(fecha,hora,id_medico,motivo,id_paciente)
+$sql = 'INSERT INTO agenda(fecha, hora, idMedico, motivo, idPaciente)
 VALUES (?, ?, ?, ?, ?) ';
 $sentencia = $pdo->prepare($sql); //prepara consulta
 $sentencia->execute([$fecha, $hora, $idMedico, $motivo, $idPaciente]); //ejecuta la sentencia SQL 

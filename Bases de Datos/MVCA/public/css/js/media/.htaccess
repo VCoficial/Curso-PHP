@@ -2,7 +2,7 @@
 options -Multiviews 
 RewriteEngine On 
 # TENER EN CUENTA LA RUTA FULL PARA EL CORE 
-RewriteBase /CURSOPHP/Bases de Datos/MVC/public
+RewriteBase /CursoPHP/Bases de Datos/MVCA/public
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
