@@ -1,8 +1,8 @@
 <ifModule mod_rewrite.c>
-options -Multiviews 
+Options -Multiviews 
 RewriteEngine On 
 # TENER EN CUENTA LA RUTA FULL PARA EL CORE 
-RewriteBase /MVCA/public
+RewriteBase /CursoPHP/MVCA/public
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

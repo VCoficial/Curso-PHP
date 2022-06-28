@@ -2,7 +2,6 @@
 /* Clase Base Controlador del MVC */
 class Controller {
     //Cargar el modelo correspondiente
-
     public function getModel($model){
         require_once '../app/models/'.$model.'.php';
         //Instanciamos la clase modelo

@@ -2,7 +2,7 @@
 
 class Medico extends Controller{
 
-    private $MedicoModel;
+  
     public function __construct()
     {
         $this->MedicoModel=$this->getModel('MedicoModel');
