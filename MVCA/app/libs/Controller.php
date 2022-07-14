@@ -8,8 +8,8 @@ class Controller {
         return new $model();
     }
 
-    //Cargamos la vista correspondiente
-    public function getView($view,$data=[]){
+    //Cargamos la vista correspondiente o renderizar
+    public function renderView($view,$data=[]){
         if(file_exists('../app/views/'.$view.'.php')){
             require_once '../app/views/'.$view.'.php';
         }

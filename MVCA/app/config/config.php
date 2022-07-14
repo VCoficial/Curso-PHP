@@ -9,7 +9,7 @@ Constantes
 define('APPROOT', dirname(dirname(__DIR__)));
 //echo APPROOT;
 //URL DE LA APP
-define('URL ROOT', 'htpp://localhost/CURSOPHP/PHP/MVCA/');
+define('URLROOT', 'htpp://localhost/CURSOPHP/PHP/MVCA/');
 //Nombre de la aplicación
 define('SITENAME', 'MICROFRAMEWORK MVC');
 //Credenciales para la bd
