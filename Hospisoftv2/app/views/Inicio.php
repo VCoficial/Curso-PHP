@@ -1,5 +1,8 @@
 <?php require_once 'inc/header.php' ; ?>
-
-<!--- CONTENIDO DEL SITIO USANDO BOOTSTRAP 5--->
+<?php  
+echo URLROOT;
+echo '<br>';
+echo APPROOT;
+?>
 
 <?php require_once 'inc/footer.php' ; ?>

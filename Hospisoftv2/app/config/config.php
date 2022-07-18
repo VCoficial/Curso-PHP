@@ -6,12 +6,13 @@ Constantes
 
 //directorio raiz del framework
 
-define('APPROOT', dirname(dirname(__DIR__)));
+define('APPROOT', dirname(dirname(__FILE__)));
 //echo APPROOT;
 //URL DE LA APP
-define('URLROOT', 'htpp://localhost/CURSOPHP/PHP/MVCA/');
+//define('URLROOT', 'htpp://www.eldominio.com/');
+define('URLROOT', 'http://localhost/Curso-PHP-master/Hospisoftv2/');
 //Nombre de la aplicación
-define('SITENAME', 'MICROFRAMEWORK MVC');
+define('SITENAME', 'Aplicacion Hospital Version MVC');
 //Credenciales para la bd
 //cammbia a la forma nnueva de hacer constantes
 define('DB_HOST', 'localhost'); //ojo: cambiarla en el display

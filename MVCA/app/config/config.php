@@ -6,7 +6,7 @@ Constantes
 
 //directorio raiz del framework
 
-define('APPROOT', dirname(dirname(__DIR__)));
+define('APPROOT', dirname(dirname(__FILE__)));
 //echo APPROOT;
 //URL DE LA APP
 define('URLROOT', 'htpp://localhost/CURSOPHP/PHP/MVCA/');
