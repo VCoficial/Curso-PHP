@@ -11,9 +11,9 @@ class Medico extends Controller{
         $data= $this->medicoModel->listar();
         $this->renderView('Medico/MedicoInicio', $data);
     }
-    public function add(){
+    public function formadd(){
         $data=[];
-        echo "agregando medico";
+        $this->renderView('Medico/MedicoAgregar', $data);
     }
     public function delete(){
         echo "borrando medico";
