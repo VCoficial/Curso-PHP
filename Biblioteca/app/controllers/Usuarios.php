@@ -2,31 +2,44 @@
 
 class Usuarios extends Controller
 {
-    public $data = [];
     public function __construct()
     {
         //Configuramos el modelo correspondiente a este controlador
         //$this->pacienteModel = $this->getModel('PacienteModel');
 
-        $this->menu = $this->getModel('UsuarioModel');
+        $this->usuarios = $this->getModel('UsuarioModel');
 
     }
     public function index()
     {
-
-
-        $this->data = $this->menu->traerUsuarios();
-
-
+        $data = [];//corregir mas tarde
+        $data = $this->usuarios->traerUsuarios();
         //$data = $this->pacienteModel->listar();
-        $this->renderView('/secciones/usuarios', $this->data);
+        $this->renderView('/secciones/usuarios', $data);
     }
 
     public function InsertarUsuarios(){
-        $this->data = $this->menu->InsertarUsuarios();
+        $this->usuarios->InsertarUsuarios();
+
+        $data = $this->usuarios->traerUsuarios();
+        $this->renderView('/secciones/usuarios', $data);
     }
 
     
+    public function editarUsuario($id)
+    {
+     
+        /*$this->usuarios->actualizarUsuario($id);
+
+        $data = [
+            'id' => $usuario->idUsuarios,
+            'otro' => $usuario->Nombre1
+        ];
+
+        die(var_dump($data));*/
+
+
+    }
 
 
 

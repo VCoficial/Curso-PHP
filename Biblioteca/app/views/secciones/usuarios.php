@@ -7,7 +7,7 @@
 
     <div class="row text-center ">
         <div class="col-md-5  ">
-            <form method="POST" id="formUsuarios" class="text-white bg-dark p-3 border border-1 rounded  w-75 mx-auto ">
+            <form method="POST" action="<?php echo URLROOT; ?>Usuarios/InsertarUsuarios" id="formUsuarios" class="text-white bg-dark p-3 border border-1 rounded  w-75 mx-auto ">
                 <div class="form-group">
                     <label for="">Ingrese su primer nombre</label>
                     <input type="text"   class="form-control" name="nombre1" placeholder="Ingrese su primer nombre" required> <br>
@@ -75,7 +75,7 @@
                     <th scope="col">Correo</th>
                     <th scope="col">Usuario</th>
                     <th scope="col">Password</th>
-                    <th scope="col">RolID</th>
+                    <th scope="col">Estado</th>
 
                 </tr>
 
@@ -94,8 +94,13 @@
                         <td><?php echo $recorrer->Passwordd;?></td>
                         <td><?php echo $recorrer->Roles_idRoles;?></td>
 
-                        <td><a class="btn btn-danger" href="">Eliminar</a></td>
-                        <td><a class="btn btn-primary" href="">Editar</a></td>
+                        <td>
+                            <a   type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Editar
+                            </a>
+                        </td>
+
+                        
 
                     </tr>
 
@@ -105,6 +110,51 @@
         </div>
 
 
+    </div>
+
+    <div class="modal fade bg-dark " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar Editorial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="text-center" action="">
+                        <label for="">Ingrese el nombre del editorial</label><br>
+                        <input type="text" value="<?php echo $recorrer->Nombre1; ?>" class="form-control" placeholder="Ingrese el nombre del editorial">
+
+                        <label for="">Ingrese el nombre del editorial</label><br>
+                        <input type="text" value="<?php echo $recorrer->Nombre2;?>" class="form-control" placeholder="Ingrese el nombre del editorial">
+
+                        <label for="">Ingrese el nombre del editorial</label><br>
+                        <input type="text" value="<?php echo $recorrer->Apellido1;?>" class="form-control" placeholder="Ingrese el nombre del editorial">
+
+                        <label for="">Ingrese el nombre del editorial</label><br>
+                        <input type="text" value="<?php echo $recorrer->Apellido2;?>"  class="form-control" placeholder="Ingrese el nombre del editorial">
+
+                        <label for="">Ingrese el nombre del editorial</label><br>
+                        <input type="text" value="<?php echo $recorrer->Telefono;?>" class="form-control" placeholder="Ingrese el nombre del editorial">
+
+                        <label for="">Ingrese el nombre del editorial</label><br>
+                        <input type="text" value="<?php echo $recorrer->correo;?>" class="form-control" placeholder="Ingrese el nombre del editorial">
+                        
+                        <label for="">Ingrese el nombre del editorial</label><br>
+                        <input type="text" value="<?php echo $recorrer->Usuario;?>" class="form-control" placeholder="Ingrese el nombre del editorial">
+
+                        <label for="">Ingrese el nombre del editorial</label><br>
+                        <input type="text" value="<?php echo $recorrer->Passwordd;?>" class="form-control" placeholder="Ingrese el nombre del editorial">
+
+                        <label for="">Ingrese el nombre del editorial</label><br>
+                        <input type="text" value="<?php echo $recorrer->Roles_idRoles;?>" class="form-control" placeholder="Ingrese el nombre del editorial">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 

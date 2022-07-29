@@ -1,2 +1,4 @@
 Options -Indexes
+#Header set Access-Control-Allow-Origin "http://www.agrovirtual.org"
+#para solucionar problemas de cross site origin
 
