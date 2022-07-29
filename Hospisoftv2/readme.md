@@ -5,5 +5,8 @@ en el subdirectori libs tendremos las clase base del sistema
 
 la carpeta public el material que se puede acceder publicamente
 
-
 ojo: este Mvc es basado en Brad traversy, libro pendiente
+
+## Servidores Web
+NGINX->Linux
+APACHE->htaccess

@@ -1,13 +1,15 @@
 <?php
 
-class Inicio extends Controller{
+
+class Inicio extends Controller
+{
+
     public function __construct()
     {
-        
     }
     public function index()
     {
-        $data=[]; //temporal por que no hay
-        $this->renderView('inicio',$data);
+        $data = [];  //temporal porque no hay
+        $this->renderView('Inicio', $data);
     }
 }

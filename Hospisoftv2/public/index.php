@@ -1,3 +1,3 @@
 <?php
-require_once '../app/booteo.php'; //cargamos las librerias bases del framework
-$Core= new Core();
+require_once '../app/Booteo.php';   //cargamos las libs base del framework
+$core = new Core();

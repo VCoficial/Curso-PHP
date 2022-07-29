@@ -1,8 +1,14 @@
-<?php require_once 'inc/header.php' ; ?>
-<?php  
-echo URLROOT;
-echo '<br>';
-echo APPROOT;
-?>
+<?php require_once APPROOT . '/views/inc/header.php'; ?>
 
-<?php require_once 'inc/footer.php' ; ?>
+
+<h4>
+    <small class="text-muted">Inicio</small>
+</h4>
+
+
+
+
+</main>
+
+
+<?php require_once APPROOT . '/views/inc/footer.php'; ?>

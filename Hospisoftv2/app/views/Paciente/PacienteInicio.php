@@ -1,15 +1,38 @@
-<?php require_once APPROOT . "/views/inc/header.php" ;?>
+<?php require_once APPROOT . "/views/inc/header.php"; ?>
+<!-- titulo seccion -->
+<h4>
+    <small class="text-muted">Paciente</small>
+    <a class="btn btn-success btn-sm" href="http://"><i class="bi bi-plus-circle"></i></a>
+</h4>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-4">
-            <h1>Paciente</h1>            
-        </div>
-        <div class="col-8">
-            <?php print_r($data);
-            ?>        
-        </div>
-    </div>
-</div>
+<table class="table table-striped table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($data as $paciente) : ?>
+            <tr>
+                <td> <?php echo $paciente->idPaciente; ?></td>
+                <td><?php echo $paciente->nombrePaciente; ?></td>
+                <td><?php echo $paciente->apellidosPaciente; ?></td>
+                <td><a class="btn btn-primary btn-sm" href="http://"><i class="bi bi-pencil-square"></i></a></td>
+                <td><a class="btn btn-danger btn-sm" href="http://"><i class="bi bi-trash3"></i></a></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
 
-<?php require_once APPROOT . "/views/inc/footer.php" ;?>
+
+
+
+
+<!-- fin del contenedor principal -->
+</main>
+
+
+
+<?php require_once APPROOT . "/views/inc/footer.php"; ?>

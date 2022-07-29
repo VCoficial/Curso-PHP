@@ -4,18 +4,19 @@ Configuracion general del framework
 Constantes
 */
 
-//directorio raiz del framework
-
+//DIRECTORIO RAIZ O PADRE  DEL FRAMEWORK
 define('APPROOT', dirname(dirname(__FILE__)));
 //echo APPROOT;
-//URL DE LA APP
-//define('URLROOT', 'htpp://www.eldominio.com/');
+
+// URL DE LA APP
+// define('URLROOT', 'http://www.eldominio.com/')
 define('URLROOT', 'http://localhost/Curso-PHP-master/Hospisoftv2/');
-//Nombre de la aplicación
-define('SITENAME', 'Aplicacion Hospital Version MVC');
-//Credenciales para la bd
-//cammbia a la forma nnueva de hacer constantes
-define('DB_HOST', 'localhost'); //ojo: cambiarla en el display
-define('DB_USER', 'root'); //usuario de la bd
-define('DB_PASSWORD', ''); //password del usuario en la bd
-define('DB_NAME', 'hospisoft'); //nombre de la bd
+//NOMBRE DE LA APLICACION
+define('SITENAME', 'Aplicación Hospital Version MVC');
+
+//CREDENCIALES PARA LA BD
+//FIXME: Cambiar a la forma nueva de hacer constantes  const=
+define('DB_HOST', 'localhost');  //ojo: cambiarla en el deploy
+define('DB_USER', 'root');    //USUARIO DE LA BD
+define('DB_PASSWORD', '');    //PASSWORD DEL USUARIO DE LA BD
+define('DB_NAME', 'hospisoft');  //NOMBRE DE LA BD 
