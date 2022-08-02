@@ -1,12 +1,10 @@
 <?php require_once '../app/views/inc/header.php'; ?>
 
-
-
 <br><br>
-<div class="container-fluid  ">
+<div class="container-fluid">
 
     <div class="row text-center ">
-        <div class="col-md-5  ">
+        <div class="col-md-5">
             <form method="POST" action="<?php echo URLROOT; ?>Usuarios/InsertarUsuarios" id="formUsuarios" class="text-white bg-dark p-3 border border-1 rounded  w-75 mx-auto ">
                 <div class="form-group">
                     <label for="">Ingrese su primer nombre</label>
@@ -54,12 +52,9 @@
                     </select>
                 </div>
                 <br>
-                <input id="enviarDatos"  value="Registrar" type="submit" class="btn btn-primary w-50 "></input>
-            </form>
+                <input id="enviarDatos" value="Registrar" type="submit" class="btn btn-primary w-50 "></input>
+            </form><br>
         </div>
-
-
-
 
         <div class="col-md-6 bg-dark border border-1 rounded  table-responsive ">
             <br>
@@ -70,13 +65,12 @@
                     <th scope="col">PrimerNombre</th>
                     <th scope="col">SegundoNombre</th>
                     <th scope="col">PrimerApellido</th>
-                    <th scope="col">segundoApellido</th>
+                    <th scope="col">SegundoApellido</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Correo</th>
                     <th scope="col">Usuario</th>
                     <th scope="col">Password</th>
                     <th scope="col">Estado</th>
-
                 </tr>
 
                 <?php foreach($data as $recorrer) :   ?>
@@ -99,8 +93,6 @@
                                 Editar
                             </a>
                         </td>
-
-                        
 
                     </tr>
 

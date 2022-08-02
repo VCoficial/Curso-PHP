@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">VecesPrestado</label>
+                    <label for="">Veces Prestado</label>
                     <input type="text" class="form-control" id="vecesPrestado" required placeholder="Correo"><br>
                 </div>
 

@@ -40,7 +40,7 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="">Fecha de InicioPrestamo</label>
+                    <label for="">Fecha de Prestamo</label>
                     <input type="date" class="form-control" id="fechaInicioPrestamo" placeholder="Fecha de ingreso"><br>
                 </div>
 

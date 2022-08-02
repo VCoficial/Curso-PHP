@@ -1,5 +1,4 @@
 <?php
-
 class Usuarios extends Controller
 {
     public function __construct()
