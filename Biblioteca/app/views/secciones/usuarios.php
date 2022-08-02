@@ -8,7 +8,7 @@
             <form method="POST" action="<?php echo URLROOT; ?>Usuarios/InsertarUsuarios" id="formUsuarios" class="text-white bg-dark p-3 border border-1 rounded  w-75 mx-auto ">
                 <div class="form-group">
                     <label for="">Ingrese su primer nombre</label>
-                    <input type="text"   class="form-control" name="nombre1" placeholder="Ingrese su primer nombre" required> <br>
+                    <input type="text" class="form-control" name="nombre1" placeholder="Ingrese su primer nombre" required> <br>
                 </div>
                 <div class="form-group">
                     <label for="">Ingrese su segundo nombre</label>
@@ -52,7 +52,7 @@
                     </select>
                 </div>
                 <br>
-                <input id="enviarDatos" value="Registrar" type="submit" class="btn btn-primary w-50 "></input>
+                <input id="enviarDatos" value="Registrar Usuario" type="submit" class="btn btn-primary w-50 "></input>
             </form><br>
         </div>
 

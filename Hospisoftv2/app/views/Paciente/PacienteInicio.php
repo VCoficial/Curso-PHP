@@ -3,6 +3,8 @@
 <h4>
     <small class="text-muted">Paciente</small>
     <a class="btn btn-success btn-sm" href="http://"><i class="bi bi-plus-circle"></i></a>
+    <a class="btn btn-success btn-sm" href="<?php echo URLROOT; ?>Paciente/ImprimirListado"><i class="bi bi-plus-circle"></i>Imprime</a>
+
 </h4>
 
 <table class="table table-striped table-inverse table-responsive">

@@ -4,15 +4,12 @@
 <div class="row mt-3">
     <div class="col-12">
         <div class="card">
-
             <div class="card-header bg-primary bg-gradient text-white">
                 <h5>Médicos Disponibles</h5>
             </div>
-
-
-
             <div class="card-body">
                 <a class="btn btn-success btn-sm" href="<?php echo URLROOT; ?>Medico/formAdd"><i class="bi bi-plus-circle"></i> Nuevo</a></small>
+                <a class="btn btn-success btn-sm" href="<?php echo URLROOT; ?>Medico/ImprimirListado"><i class="bi bi-printer"></i>Listado de Medicos</a></small>
                 <table class="table">
                     <thead>
                         <tr>
@@ -36,8 +33,6 @@
                                 <td><?php echo $medico->especialidadMedico; ?></td>
                                 <td><a class="btn btn-primary btn-sm" href="<?php echo URLROOT; ?>Medico/update/<?php echo $medico->idMedico;  ?>"><i class="bi bi-pencil-square"></i></a></td>
                                 <td><a class="btn btn-danger btn-sm" href="<?php echo URLROOT; ?>Medico/delete/<?php echo $medico->idMedico;  ?>"><i class="bi bi-trash3"></i></a></td>
-
-
 
                             </tr>
                         <?php endforeach; ?>

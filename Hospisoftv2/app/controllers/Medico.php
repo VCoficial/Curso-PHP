@@ -79,9 +79,6 @@ class Medico extends Controller
             $this->renderView('Medico/MedicoEditar', $data);
         }
     }
-
-
-
     public function delete($id)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -109,7 +106,12 @@ class Medico extends Controller
         }
     }
 
-
+    public function ImprimirListado()
+    {
+        $data = $this->medicoModel->getAll();
+        //$data = [];
+        $this->renderView('Medico/rptListadoMedicos', $data);
+    }
     //buscar resgistros por apellido
     public function search()
     {

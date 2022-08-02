@@ -11,7 +11,7 @@ class PacienteModel
         $this->db = new Dbase;
     }
 
-    public function listar()
+    public function getAll()
     {
         $this->db->query("SELECT * FROM paciente");
         $resultSet = $this->db->getAll();

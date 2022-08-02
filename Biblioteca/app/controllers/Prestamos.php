@@ -4,13 +4,12 @@ class Prestamos extends Controller
 {
     public function __construct()
     {
-        //Configuramos el modelo correspondiente a este controlador
-        //$this->pacienteModel = $this->getModel('PacienteModel');
+        $this->clientes = $this->getModel('PrestamoModel');
     }
     public function index()
     {
-        //$data = $this->pacienteModel->listar();
         $data = [];
+        $data = $this->clientes->traerPrestamos();
         $this->renderView('/secciones/prestamos', $data);
     }
 }

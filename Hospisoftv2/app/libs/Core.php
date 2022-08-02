@@ -1,8 +1,10 @@
 <?php
 /*
 Clase base que arma las rutas abreviadas del mvc
+transforma la URL obtenida por GET en un array
 controlador/metodo/parametro
 P.ej: medico/crearFormulaMedica/$id
+
 */
 
 class Core

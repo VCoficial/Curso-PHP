@@ -11,7 +11,7 @@ class Paciente extends Controller
     }
     public function index()
     {
-        $data = $this->pacienteModel->listar();
+        $data = $this->pacienteModel->getAll();
         //$data = [];
         $this->renderView('Paciente/PacienteInicio', $data);
     }
@@ -20,6 +20,14 @@ class Paciente extends Controller
     {
         $data = [];
         echo "agregando medico";
+    }
+
+
+    public function ImprimirListado()
+    {
+        $data = $this->pacienteModel->getAll();
+        //$data = [];
+        $this->renderView('Paciente/rptListadoPaciente', $data);
     }
 
     public function delete()

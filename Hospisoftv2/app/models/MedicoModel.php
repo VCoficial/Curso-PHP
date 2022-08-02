@@ -17,6 +17,7 @@ class MedicoModel
     {
         $this->db->query("SELECT * FROM medico");
         $resultSet = $this->db->getAll();
+        // $resultSet = json_encode($resultSet);
         return $resultSet;
     }
     // retorna un registro de acuerdo al id

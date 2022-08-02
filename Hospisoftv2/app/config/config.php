@@ -12,7 +12,7 @@ define('APPROOT', dirname(dirname(__FILE__)));
 // define('URLROOT', 'http://www.eldominio.com/')
 define('URLROOT', 'http://localhost/Curso-PHP-master/Hospisoftv2/');
 //NOMBRE DE LA APLICACION
-define('SITENAME', 'Aplicación Hospital Version MVC');
+define('SITENAME', 'Hospital LOURDES S.A.');
 
 //CREDENCIALES PARA LA BD
 //FIXME: Cambiar a la forma nueva de hacer constantes  const=
