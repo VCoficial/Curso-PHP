@@ -1,45 +1,56 @@
 <?php
+
 class Usuarios extends Controller
 {
+    public $data = [];
     public function __construct()
     {
         //Configuramos el modelo correspondiente a este controlador
         //$this->pacienteModel = $this->getModel('PacienteModel');
-
-        $this->usuarios = $this->getModel('UsuarioModel');
-
+        $this->Usuarios = $this->getModel('UsuarioModel');
     }
     public function index()
     {
-        $data = [];//corregir mas tarde
-        $data = $this->usuarios->traerUsuarios();
+        $this->data = $this->Usuarios->traerUsuarios();
         //$data = $this->pacienteModel->listar();
-        $this->renderView('/secciones/usuarios', $data);
+        $this->renderView('/secciones/usuarios', $this->data);
     }
 
-    public function InsertarUsuarios(){
-        $this->usuarios->InsertarUsuarios();
-
-        $data = $this->usuarios->traerUsuarios();
-        $this->renderView('/secciones/usuarios', $data);
-    }
-
-    
-    public function editarUsuario($id)
+    public function InsertarUsuarios()
     {
-     
-        /*$this->usuarios->actualizarUsuario($id);
+        $this->Usuarios->InsertarUsuarios();
+        $this->data = $this->Usuarios->traerUsuarios();
+        $this->renderView('/secciones/usuarios', $this->data);
+    }
 
-        $data = [
-            'id' => $usuario->idUsuarios,
-            'otro' => $usuario->Nombre1
+    public function ActualizarUsuario()
+    {
+        $this->data = [
+            'iduser' => $_POST['id'],
+            'nom1' => $_POST['nombre1'],
+            'nom2' => $_POST['nombre2'],
+            'ape1' => $_POST['Apellido1'],
+            'ape2' => $_POST['Apellido2'],
+            'telefono' => $_POST['telefonoUsuario'],
+            'correo' => $_POST['correoUsuario'],
+            'user' => $_POST['usuario'],
+            'pass' => $_POST['password'],
+            'rol' => $_POST['rol'],
         ];
 
-        die(var_dump($data));*/
-
-
+        $this->Usuarios->ActualizarUsuario($this->data);
+        $this->data = $this->Usuarios->traerUsuarios();
+        $this->renderView('secciones/usuarios', $this->data);
     }
 
+    public function buscarUsuario($id)
+    {
+        $this->data = [
+            'id' => $id
+        ];
 
+        $this->data = $this->Usuarios->buscarUsuario($this->data);
 
+        $this->renderView('/Actualizar/ActualizarUsuarios', $this->data);
+    }
 }

@@ -9,58 +9,84 @@ class LibrosModel
         $this->db = new Dbase;
     }
 
-    public function traerLibros()
+    public function traerTodosLosLibros()
     {
         $this->db->query("SELECT * from libros");
-        
-        $resultSet = $this->db->getAll();
-        return $resultSet;
+        return $resulset = $this->db->getAll();
     }
 
-    public function buscarUsuario($id)
+    public function insertarEditorial($data)
     {
-        $this->db->query("SELECT * from libros where idLibro =:id");
-        $this->db->bind(':id', $id);
-        $resultSet = $this->db->getOne();
-        return $resultSet;
-    }
+
+        $valor = $this->db->query("INSERT INTO editoriales (NombreEditorial) VALUES (:Nombre)");
+
+        $valor->bindParam(':Nombre', $data['editorial'], pdo::PARAM_STR);
 
 
-    public function InsertarUsuarios()
-    {
-        $Nombre1 = $_POST["nombre1"];
-        $Nombre2 = $_POST["nombre2"];
-        $Apellido1 = $_POST["Apellido1"];
-        $Apellido2 = $_POST["Apellido2"];
-        $Telefono = $_POST["telefonoUsuario"];
-        $Correo = $_POST["correoUsuario"];
-        $Usuario = $_POST["usuario"];
-        $password = $_POST["password"];
-        $roles = $_POST["rol"];
-
-        $this->db->query("INSERT INTO `usuarios`
-        (`Nombre1`, `Nombre2`, `Apellido1`, `Apellido2`, `Telefono`, `correo`, `Usuario`, `Passwordd`, `Roles_idRoles`) VALUES 
-        ('$Nombre1','$Nombre2','$Apellido1','$Apellido2','$Telefono','$Correo','$Usuario','$password',$roles)");
-        
         $this->db->execute();
     }
 
-    public function actualizarUsuario($data)
+    public function traerEditoriales()
     {
-        $this->db->query('DELETE FROM usuarios WHERE idUsuarios= :id');
-        //vinculacion de los datos
-        
-        $this->db->bind(':id', $data['id']);
+        $this->db->query("SELECT idEditoriales,NombreEditorial FROM editoriales");
 
-        // ejecucion de la consulta
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $resulset = $this->db->getAll();
     }
 
-    
+    public function InsertarLibro($data)
+    {
+        $valor = $this->db->query("INSERT INTO libros 
+        (Nombre,Editoriales_idEditoriales,fechaDeIngreso,Autor,FechaPublicacion,Cantidad) VALUES
+        (:nom,:edi,:fechaIngreso,:autor, :fechap, :cantidad)");
 
+        $valor->bindParam(":nom", $data['nomLibro'], pdo::PARAM_STR);
+        $valor->bindParam(":edi", $data['editorial'], pdo::PARAM_INT);
+        $valor->bindParam(":fechaIngreso", $data['fechaIngreso'], pdo::PARAM_STR);
+        $valor->bindParam(":autor", $data['nomAutor'], pdo::PARAM_STR);
+        $valor->bindParam(":fechap", $data['fechaPublicacion'], pdo::PARAM_STR);
+        $valor->bindParam(":cantidad", $data['libroCantidad'], pdo::PARAM_STR);
+
+        $this->db->execute();
+    }
+
+    public function buscarLibro($data)
+    {
+        $valor = $this->db->query("SELECT * from libros where Nombre like '%' :buscar '%' ");
+
+        $valor->bindParam(":buscar", $data['buscarLibro'], pdo::PARAM_STR);
+
+
+        return $this->db->getAll();
+    }
+
+    public function ActualizarLibro($data)
+    {
+        $valor = $this->db->query("UPDATE `libros` SET 
+        `Nombre`=:Nombre,
+        `Editoriales_idEditoriales`=:Editoriales_idEditoriales,
+        `fechaDeIngreso`=:fechaDeIngreso,
+        `Autor`=:Autor,
+        `Cantidad`=:Cantidad WHERE idLibro = :idLibro");
+
+        $valor->bindParam(":idLibro", $data['idLibro'], pdo::PARAM_INT);
+        $valor->bindParam(":Nombre", $data['nombreLibro'], pdo::PARAM_STR);
+        $valor->bindParam(":Editoriales_idEditoriales", $data['editorial'], pdo::PARAM_STR);
+        $valor->bindParam(":fechaDeIngreso", $data['fechaIngresoLibro'], pdo::PARAM_STR);
+        $valor->bindParam(":Autor", $data['NonbreAutor'], pdo::PARAM_STR);
+        $valor->bindParam(":Cantidad", $data['CantidadIngresadaLibro'], pdo::PARAM_INT);
+
+
+        $this->db->execute();
+    }
+
+    public function buscarLibroActualizar($data)
+    {
+        $valor = $this->db->query("SELECT * FROM libros where idLibro= :id");
+
+        $valor->bindParam(":id", $data['id'], pdo::PARAM_INT);
+
+        $resulset = $this->db->getAll();
+
+        return $resulset;
+    }
 }

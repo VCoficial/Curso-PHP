@@ -1,4 +1,5 @@
-<div class="row mt-5 p-5 text-light text-center">
+<br>
+<div class="row mt-5 p-5  text-light text-center">
   <div class="col-md-6">
     Redes
   </div>
@@ -10,7 +11,6 @@
 </div>
 
 </main>
-</div>
 </div>
 
 

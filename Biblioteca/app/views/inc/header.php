@@ -11,7 +11,6 @@
   <title><?php echo SITENAME ?></title>
   <link href="<?php echo URLROOT; ?>css/bootstrap.min.css" rel="stylesheet">
   <!-- Favicons -->
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>css/menu.css">
 
@@ -19,12 +18,14 @@
 
 <body>
 
+
   <?php
   error_reporting(0);
   session_start();
   ?>
 
-  <nav class="navbar navbar-expand-lg text-white navbar-dark">
+
+<nav class="navbar navbar-expand-lg text-white navbar-dark">
     <div class="container-fluid mt-3  ">
       <a class="navbar-brand text-white" href="<?php echo URLROOT; ?> Menu ">BIENVENIDO</a>
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,9 +44,7 @@
           ?></a>
           </li>
         </ul>
-
         <a class="btn btn-danger" href="<?php echo URLROOT;?>Inicio">Cerrar Sesión</a>
-
       </div>
     </div>
   </nav>

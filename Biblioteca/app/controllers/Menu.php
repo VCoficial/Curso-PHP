@@ -28,6 +28,7 @@ class Menu extends Controller
 
             $_SESSION["iniciar"] = $data->Nombre1 . " " . $data->Nombre2 . " " . $data->Apellido1 . " " . $data->Apellido2 . " " ." - ". $data->Roles;
             $_SESSION["rol"] = $data->Roles;
+            $_SESSION["idPrestador"] = $data->idUsuarios;
             $this->renderView('menu', $data);
         }
     }

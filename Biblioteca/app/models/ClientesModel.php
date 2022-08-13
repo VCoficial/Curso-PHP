@@ -11,55 +11,93 @@ class ClientesModel
 
     public function traerClientes()
     {
-        $this->db->query("SELECT * from clientes");
-        
-        $resultSet = $this->db->getAll();
-        return $resultSet;
+        $this->db->query("SELECT * FROM clientes");
+
+
+
+        return $this->db->getAll();
     }
 
-    public function buscarCliente($id)
+    public function buscarCliente($data)
     {
-        $this->db->query("SELECT * from clientes where idCliente =:id");
-        $this->db->bind(':id', $id);
-        $resultSet = $this->db->getOne();
-        return $resultSet;
+        $valor = $this->db->query("SELECT * FROM clientes where Identificacion = :identificacion");
+
+        $valor->bindParam("identificacion", $data['identificacion'], pdo::PARAM_INT);
+
+        return $this->db->getOne();
     }
 
-
-    public function InsertarClientes()
+    public function abrirEditarClientes($data)
     {
-        $identificacion = $_POST["identificacion"];
-        $Nombre1 = $_POST["nombre1"];
-        $Nombre2 = $_POST["nombre2"];
-        $Apellido1 = $_POST["Apellido1"];
-        $Apellido2 = $_POST["Apellido2"];
-        $Telefono = $_POST["telefonoCliente"];
-        $Correo = $_POST["correoCliente"];
-        $vecesPrestado = $_POST["vecesPrestado"];
+        $valor = $this->db->query("SELECT * FROM Clientes where idCliente = :id");
 
-        $this->db->query("INSERT INTO `clientes`
-        (`Identificacion`,`Nombre1`, `Nombre2`, `Apellido1`, `Apellido2`, `Telefono`, `Correo`,`vecesPrestado`) VALUES 
-        ('$identificacion','$Nombre1','$Nombre2','$Apellido1','$Apellido2','$Telefono','$Correo','$vecesPrestado')");
-        
+        $valor->bindParam("id", $data['id'], pdo::PARAM_INT);
+
+        return $this->db->getOne();
+    }
+
+    public function insertarCliente($data)
+    {
+        $valor = $this->db->query("INSERT INTO clientes 
+        (Identificacion,Nombre1,Nombre2,Apellido1,Apellido2,Telefono,Correo,Estado) VALUES
+        (:Identificacion,:Nombre1,:Nombre2,:Apellido1,:Apellido2,:telefono,:Correo,1)");
+
+        $valor->bindParam(":Identificacion", $data['identificacion'], pdo::PARAM_INT);
+        $valor->bindParam(":Nombre1", $data['nombre1Cliente'], pdo::PARAM_STR);
+        $valor->bindParam(":Nombre2", $data['nombre2Cliente'], pdo::PARAM_STR);
+        $valor->bindParam(":Apellido1", $data['apellido1Cliente'], pdo::PARAM_STR);
+        $valor->bindParam(":Apellido2", $data['apellido2Cliente'], pdo::PARAM_STR);
+        $valor->bindParam(":telefono", $data['telefonoCliente'], pdo::PARAM_STR);
+        $valor->bindParam(":Correo", $data['correoCliente'], pdo::PARAM_STR);
+
+
         $this->db->execute();
     }
 
-    public function actualizarUsuario($data)
+    public function actualizarClientes($data)
     {
-        $this->db->query('DELETE FROM usuarios WHERE idUsuarios= :id');
-        //vinculacion de los datos
-        
-        $this->db->bind(':id', $data['id']);
+        $valor = $this->db->query("UPDATE `clientes` SET
+         `Nombre1`=:Nombre1,
+         `Nombre2`=:Nombre2,
+         `Apellido1`=:Apellido1,
+         `Apellido2`=:Apellido2,
+         `Telefono`=:Telefono,
+         `Correo`=:correo,
+         `Estado`=:estado WHERE idCliente = :idCliente");
 
-        // ejecucion de la consulta
+        $valor->bindParam(":idCliente", $data['idCliente'], pdo::PARAM_INT);
+        $valor->bindParam(":Nombre1", $data['primerNombre'], pdo::PARAM_STR);
+        $valor->bindParam(":Nombre2", $data['segundoNombre'], pdo::PARAM_STR);
+        $valor->bindParam(":Apellido1", $data['primerApellido'], pdo::PARAM_STR);
+        $valor->bindParam(":Apellido2", $data['segundoApellido'], pdo::PARAM_STR);
+        $valor->bindParam(":Telefono", $data['telefono'], pdo::PARAM_STR);
+        $valor->bindParam(":correo", $data['correo'], pdo::PARAM_STR);
+        $valor->bindParam(":estado", $data['estado'], pdo::PARAM_INT);
 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        $this->db->execute();
     }
 
-    
+    public function actualizarPenalizacion($data)
+    {
+        $valor = $this->db->query("UPDATE `clientes` SET
+         `Nombre1`=:Nombre1,
+         `Nombre2`=:Nombre2,
+         `Apellido1`=:Apellido1,
+         `Apellido2`=:Apellido2,
+         `Telefono`=:Telefono,
+         `Correo`=:correo,
+         `Estado`=:estado WHERE idCliente = :idCliente");
+
+        $valor->bindParam(":idCliente", $data['idCliente'], pdo::PARAM_INT);
+        $valor->bindParam(":Nombre1", $data['primerNombre'], pdo::PARAM_STR);
+        $valor->bindParam(":Nombre2", $data['segundoNombre'], pdo::PARAM_STR);
+        $valor->bindParam(":Apellido1", $data['primerApellido'], pdo::PARAM_STR);
+        $valor->bindParam(":Apellido2", $data['segundoApellido'], pdo::PARAM_STR);
+        $valor->bindParam(":Telefono", $data['telefono'], pdo::PARAM_STR);
+        $valor->bindParam(":correo", $data['correo'], pdo::PARAM_STR);
+        $valor->bindParam(":estado", $data['estado'], pdo::PARAM_INT);
+        $this->db->execute();
+    }
+
 
 }
