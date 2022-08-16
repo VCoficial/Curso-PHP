@@ -30,7 +30,7 @@ session_start();
                         <h5 class="card-title text-white ">Libros</h5>
                         <a href="<?php echo URLROOT; ?>Libros" class="btn btn-primary">Ingresar</a>
                     </div>
-                </div>
+                </div><br>
             </div>
 
             <div class="col-md-4">
@@ -38,7 +38,7 @@ session_start();
                     <img src="<?php echo URLROOT; ?>img/libro-abierto.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-white ">Editoriales</h5>
-                        <a href="<?php echo URLROOT; ?>Libros" class="btn btn-primary">Ingresar</a>
+                        <a href="<?php echo URLROOT; ?>editoriales" class="btn btn-primary">Ingresar</a>
                     </div>
                 </div>
             </div>
@@ -60,10 +60,10 @@ session_start();
             <div class="card mx-auto p-2 mx-auto bg-dark border border-1  border-white " style="width: 18rem;">
                 <img src="<?php echo URLROOT; ?>img/block.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-white ">Prestamos</h5>
-                    <a href="<?php echo URLROOT; ?>prestamos" class="btn btn-primary">Ingresar</a>
+                    <h5 class="card-title text-white ">Penalizaciones</h5>
+                    <a href="<?php echo URLROOT; ?>Penalizaciones" class="btn btn-primary">Ingresar</a>
                 </div>
-            </div>
+            </div><br>
         </div>
 
         <div class="col-md-4">
@@ -75,8 +75,6 @@ session_start();
                 </div>
             </div>
         </div>
-
-        
 
     <?php } else { ?>
 

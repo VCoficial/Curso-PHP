@@ -1,7 +1,7 @@
 <?php require_once '../app/views/inc/header.php'; ?>
 
 
-<br><br><br><br><br>
+<br><br><br><br>
 <div class="container-fluid  ">
 
     <div class="row text-center ">
@@ -56,6 +56,6 @@
         </div>
 
 
-    </div><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div><br><br>
 
     <?php require_once '../app/views/inc/footer.php'; ?>

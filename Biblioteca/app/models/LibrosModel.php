@@ -15,12 +15,38 @@ class LibrosModel
         return $resulset = $this->db->getAll();
     }
 
+    public function abrirActualizarEditorial($data)
+    {
+
+        $valor = $this->db->query("SELECT * FROM editoriales where idEditoriales = :id");
+
+        $valor->bindParam(':id', $data['id'], pdo::PARAM_INT);
+
+
+        return $this->db->getOne();
+    }
+
     public function insertarEditorial($data)
     {
 
         $valor = $this->db->query("INSERT INTO editoriales (NombreEditorial) VALUES (:Nombre)");
 
-        $valor->bindParam(':Nombre', $data['editorial'], pdo::PARAM_STR);
+        $valor->bindParam(':Nombre', $data['nomEditorial'], pdo::PARAM_STR);
+
+
+        $this->db->execute();
+    }
+
+    public function actualizarEditoriales($data)
+    {
+
+        $valor = $this->db->query("UPDATE `editoriales` SET 
+        `NombreEditorial`= :nombre1 ,
+        `Estado`= :estadoEditorial where idEditoriales = :idEditorial");
+
+        $valor->bindParam(':nombre1', $data['nombre1'], pdo::PARAM_STR);
+        $valor->bindParam(':estadoEditorial', $data['estadoEditorial'], pdo::PARAM_INT);
+        $valor->bindParam(':idEditorial', $data['idEditorial'], pdo::PARAM_INT);
 
 
         $this->db->execute();
@@ -28,7 +54,7 @@ class LibrosModel
 
     public function traerEditoriales()
     {
-        $this->db->query("SELECT idEditoriales,NombreEditorial FROM editoriales");
+        $this->db->query("SELECT idEditoriales,NombreEditorial, Estado FROM editoriales");
 
         return $resulset = $this->db->getAll();
     }
@@ -75,7 +101,6 @@ class LibrosModel
         $valor->bindParam(":Autor", $data['NonbreAutor'], pdo::PARAM_STR);
         $valor->bindParam(":Cantidad", $data['CantidadIngresadaLibro'], pdo::PARAM_INT);
 
-
         $this->db->execute();
     }
 
@@ -89,4 +114,16 @@ class LibrosModel
 
         return $resulset;
     }
+
+    public function buscarEditorial($data)
+    {
+        $valor = $this->db->query("SELECT * FROM editoriales where NombreEditorial like '%' :buscar '%' ");
+
+        $valor->bindParam(":buscar", $data['buscar'], pdo::PARAM_STR);
+
+        $resulset = $this->db->getall();
+
+        return $resulset;
+    }
+
 }
