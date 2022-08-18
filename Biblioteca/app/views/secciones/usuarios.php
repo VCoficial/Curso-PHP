@@ -3,8 +3,7 @@
 
 
 <br><br>
-<div class="container-fluid  ">
-
+<div class="container-fluid">
     <div class="row text-center ">
         <div class="col-md-5  ">
             <form method="POST" action="<?php echo URLROOT; ?>Usuarios/InsertarUsuarios" id="formUsuarios" class="text-white bg-dark p-3 border border-1 rounded  w-75 mx-auto ">
@@ -55,11 +54,8 @@
                 </div>
                 <br>
                 <input id="enviarDatos" value="Registrar" type="submit" class="btn btn-primary w-50 "></input>
-            </form>
+            </form><br>
         </div>
-
-
-
 
         <div class="col-md-6 bg-dark border border-1 rounded  table-responsive ">
             <br>
@@ -100,8 +96,6 @@
                                 Editar
                             </a>
                         </td>
-
-
                     </tr>
 
                 <?php endforeach ?>

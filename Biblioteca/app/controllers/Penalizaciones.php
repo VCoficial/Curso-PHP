@@ -32,4 +32,34 @@ class Penalizaciones extends Controller
         $this->renderView('Registros/registrarPenalizacion', $data);
     }
 
+    public function insertarPenalizacion()
+    {
+        $data = [
+            'idClienteEstado' => $_POST['idClienteEstado'],
+            'inicioFecha' => $_POST['inicioFecha'],
+            'finFecha' => $_POST['finFecha'],
+            'prestamo' => $_POST['idPrestamo'],
+            'idprestador' => $_POST['idprestador']
+        ];
+
+        /*echo "<pre>";
+        print_r($data);
+        echo "<pre>";*/
+
+        $this->penalizaciones->insertarPenalizacion($data);
+
+        $this->index();
+    }
+
+    public function abrirActualizarPenalizaciones($id)
+    {
+        $data = [
+            'id' => $id
+        ];
+
+        $data = $this->penalizaciones->traerPenalizacionActualizar($data);
+
+        $this->renderView('Actualizar/ActualizarPenalizacion', $data);
+        
+    }
 }

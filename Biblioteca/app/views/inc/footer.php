@@ -1,4 +1,5 @@
-<div class="row mt-5 p-5  text-light text-center">
+<footer>
+<div class="row mt-5 p-5 text-light text-center">
   <div class="col-md-6">
     Redes
   </div>
@@ -8,6 +9,7 @@
     Desarrollado por <b>Warson</b> &copy; 2021
   </div>
 </div>
+</footer>
 
 </main>
 </div>

@@ -2,12 +2,9 @@
 
 
 <br><br><br><br>
-<div class="container-fluid  ">
-
+<div class="container-fluid">
     <div class="row text-center ">
-
-        <div class="col-md-12 bg-dark mx-auto w-75  table-responsive border border-1 rounded    table-responsive"><br>
-
+        <div class="col-md-12 bg-dark mx-auto w-75  table-responsive border border-1 rounded table-responsive"><br>
             <div class="justify-content-around d-flex  ">
                 <a class="btn btn-success w-25 " href="<?php echo URLROOT; ?>Clientes/abrirRegistrarClientes">Registrar Cliente</a>
                 <a href="<?php echo URLROOT; ?>Clientes/abrirBuscarClientes" class="btn btn-success ml-2 text-white border border-1 border-dark  w-50 ">Buscar Cliente</a><br>
@@ -27,6 +24,7 @@
                     <th scope="col">Telefono</th>
                     <th scope="col">Correo</th>
                     <th scope="col">Estado</th>
+                    <th scope="col">VecesPenalizado</th>
 
 
                 </tr>
@@ -36,7 +34,7 @@
                     <tr>
                         <td><?php echo $recorrer->idCliente ?></td>
                         <td><?php echo $recorrer->Identificacion ?></td>
-        
+
                         <td><?php echo $recorrer->Nombre1 ?></td>
                         <td><?php echo $recorrer->Nombre2 ?></td>
                         <td><?php echo $recorrer->Apellido1 ?></td>
@@ -44,6 +42,7 @@
                         <td><?php echo $recorrer->Telefono ?></td>
                         <td><?php echo $recorrer->Correo ?></td>
                         <td><?php echo $recorrer->Estado ?></td>
+                        <td><?php echo $recorrer->vecesPenalizado ?></td>
 
                         
                         <td><a class="btn btn-primary" href="<?php echo URLROOT; ?>Clientes/abrirEditarClientes/<?php echo $recorrer->idCliente ?>">Actualizar</a></td>

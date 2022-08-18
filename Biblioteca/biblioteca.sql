@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 16-08-2022 a las 16:21:16
+-- Tiempo de generación: 18-08-2022 a las 16:05:01
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 8.1.6
 
@@ -36,21 +36,17 @@ CREATE TABLE `clientes` (
   `Apellido2` varchar(150) NOT NULL,
   `Telefono` varchar(150) NOT NULL,
   `Correo` varchar(150) NOT NULL,
-  `Estado` int(11) NOT NULL
+  `Estado` int(11) NOT NULL,
+  `vecesPenalizado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`idCliente`, `Identificacion`, `Nombre1`, `Nombre2`, `Apellido1`, `Apellido2`, `Telefono`, `Correo`, `Estado`) VALUES
-(1, 11000, 'Mario', 'andres', 'ocampo', 'castaneda', '3207897958', 'andres@gmail.com', 1),
-(3, 1006334975, 'alejandro', NULL, 'morales', 'loaiza', '3002082778', 'alejandro@gmail.com', 0),
-(4, 1006334974, 'andres', 'jhojan', 'perez', 'galvis', '3214587744', 'jhojan@gmail.com', 1),
-(5, 1006355214, 'andres', 'felipe', 'vera', 'castaÃ±eda', '3254221521', 'verita@gmail.com', 0),
-(6, 575785, 'alberto', 'elver', 'larga', 'mogollon', '3205474411', 'alberto@gmail.com', 0),
-(7, 575785, 'ggggg', 'ggggg', 'ggggg', 'gggg', '300214521', 'wergrg@gmail.com', 0),
-(8, 956262, 'andres', 'sanchez', 'gomez', 'restrepo', '3207897958', 'andres@gmail.com', 1);
+INSERT INTO `clientes` (`idCliente`, `Identificacion`, `Nombre1`, `Nombre2`, `Apellido1`, `Apellido2`, `Telefono`, `Correo`, `Estado`, `vecesPenalizado`) VALUES
+(1, 11000, 'Mario', 'andres', 'ocampo', 'castaneda', '3207897958', 'andres@gmail.com', 1, 9),
+(3, 1006334975, 'alejandro', NULL, 'morales', 'loaiza', '3002082778', 'alejandro@gmail.com', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -98,8 +94,6 @@ INSERT INTO `libros` (`idLibro`, `Nombre`, `Editoriales_idEditoriales`, `fechaDe
 (1, 'Don Quijote de la Mancha', 1, '2022-08-03', 'Miguel de Cervantes', '2022-08-03', 5),
 (2, 'pinocho', 3, '2022-08-07', 'pepe', '2022-08-22', 10),
 (3, 'los siete enanitos', 2, '2022-08-01', 'pepito', '2022-08-21', 50),
-(4, 'blanca nieves', 2, '2022-08-30', 'chespirito esta muerto por gei', NULL, 2),
-(5, 'egwrgrg', 1, '2022-08-26', 'chespirito esta muerto por gei', '2022-08-08', 2),
 (6, 'ballena', 4, '2022-08-01', 'andres', '2022-08-12', 2);
 
 -- --------------------------------------------------------
@@ -110,9 +104,8 @@ INSERT INTO `libros` (`idLibro`, `Nombre`, `Editoriales_idEditoriales`, `fechaDe
 
 CREATE TABLE `penalizacion` (
   `idPenalizacion` int(11) NOT NULL,
-  `inicioPenalizacion` date NOT NULL,
-  `finPenalizacion` date NOT NULL,
-  `idCliente` int(11) NOT NULL,
+  `inicioPenalizacion` date DEFAULT NULL,
+  `finPenalizacion` date DEFAULT NULL,
   `idPrestamo` int(11) NOT NULL,
   `idUsuarios` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -121,8 +114,16 @@ CREATE TABLE `penalizacion` (
 -- Volcado de datos para la tabla `penalizacion`
 --
 
-INSERT INTO `penalizacion` (`idPenalizacion`, `inicioPenalizacion`, `finPenalizacion`, `idCliente`, `idPrestamo`, `idUsuarios`) VALUES
-(1, '2022-08-16', '2022-08-31', 3, 1, 3);
+INSERT INTO `penalizacion` (`idPenalizacion`, `inicioPenalizacion`, `finPenalizacion`, `idPrestamo`, `idUsuarios`) VALUES
+(15, '2022-08-18', '2022-08-31', 1, 2),
+(16, '2022-08-18', '2022-08-31', 1, 2),
+(17, '2022-08-18', '2022-08-31', 1, 2),
+(18, '2022-08-18', '2022-08-31', 1, 2),
+(19, '2022-08-24', '2022-08-31', 1, 2),
+(20, '2022-08-18', '2022-08-25', 1, 2),
+(21, '2022-08-18', '2022-08-25', 1, 2),
+(22, '2022-08-19', '2022-08-31', 1, 2),
+(23, '2022-08-18', '2022-08-31', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -194,7 +195,7 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`idUsuarios`, `Nombre1`, `Nombre2`, `Apellido1`, `Apellido2`, `Telefono`, `correo`, `Usuario`, `Passwordd`, `Roles_idRoles`) VALUES
 (2, 'Alejandro', NULL, 'Morales', 'Loaiza', '3002082778', 'alejandro.morales9@misena.edu.co', 'alejo123', '12345', 1),
 (3, 'maicol', 'nadres', 'sanchez', 'woeijfweif', '2143234', 'jowef@gmail.com', 'maicol123', '12345', 2),
-(4, 'andresss', 'fe', 'ver', 'cas', '45346456', 'ciberandresoficial@gmail.com', 'andres123', '12345', 1);
+(5, 'melisa', 'andrea', 'jimenez', ' sanchez', '3002082455', 'karen@gmail.com', 'karen123', '12345', 2);
 
 --
 -- Índices para tablas volcadas
@@ -224,9 +225,8 @@ ALTER TABLE `libros`
 --
 ALTER TABLE `penalizacion`
   ADD PRIMARY KEY (`idPenalizacion`),
-  ADD KEY `idCliente` (`idCliente`),
-  ADD KEY `idPrestamo` (`idPrestamo`),
-  ADD KEY `idUsuarios` (`idUsuarios`);
+  ADD KEY `idUsuarios` (`idUsuarios`),
+  ADD KEY `idPrestamo` (`idPrestamo`);
 
 --
 -- Indices de la tabla `prestamos`
@@ -276,7 +276,7 @@ ALTER TABLE `libros`
 -- AUTO_INCREMENT de la tabla `penalizacion`
 --
 ALTER TABLE `penalizacion`
-  MODIFY `idPenalizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idPenalizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamos`
@@ -294,7 +294,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
@@ -310,7 +310,6 @@ ALTER TABLE `libros`
 -- Filtros para la tabla `penalizacion`
 --
 ALTER TABLE `penalizacion`
-  ADD CONSTRAINT `penalizacion_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`),
   ADD CONSTRAINT `penalizacion_ibfk_2` FOREIGN KEY (`idPrestamo`) REFERENCES `prestamos` (`idPrestamo`),
   ADD CONSTRAINT `penalizacion_ibfk_3` FOREIGN KEY (`idUsuarios`) REFERENCES `usuarios` (`idUsuarios`);
 
