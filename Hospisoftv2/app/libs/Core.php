@@ -42,8 +42,6 @@ class Core
     }
 
 
-
-
     /*
     *Toma la ruta de la url, la vuelve un arreglo 
     *y posteriormente en una ruta abreviada

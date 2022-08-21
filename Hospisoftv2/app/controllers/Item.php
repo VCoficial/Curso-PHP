@@ -1,24 +1,25 @@
 <?php
 
 
-class Medico extends Controller
+class Item extends Controller
 {
 
     public function __construct()
     {
         //configuramos el modelo correspondiente a este controlador
-        $this->medicoModel = $this->getModel('MedicoModel');
+        $this->itemModel = $this->getModel('ItemModel');
     }
 
     public function getAll()
     {
-        $data = $this->medicoModel->getAll();
+        $data = $this->itemModel->getAll();
         $data = json_encode($data);
         echo $data;
     }
 
+
     //carga tabla inicial con paginación
-    public function index($currentPage = 1)
+    /*  public function index($currentPage = 1)
     {
         $perPage = 15;
         $totalCount = $this->medicoModel->totalMedicos();
@@ -36,16 +37,16 @@ class Medico extends Controller
         ];
 
         $this->renderView('Medico/MedicoInicio', $data);
-    }
-
+    } */
+    /* 
     public function formAdd()
     {
         $data = [];
         $this->renderView('Medico/MedicoAgregar', $data);
     }
+ */
 
-
-    public function add()
+    /* public function add()
     {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $data = [
@@ -69,10 +70,10 @@ class Medico extends Controller
         } else {
             echo 'Atención! los datos no fueron enviados de un formulario';
         }
-    }
+    } */
 
 
-    public function update($id)
+    /*  public function update($id)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
@@ -100,8 +101,8 @@ class Medico extends Controller
             ];
             $this->renderView('Medico/MedicoEditar', $data);
         }
-    }
-    public function delete($id)
+    } */
+    /*  public function delete($id)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = [
@@ -110,8 +111,7 @@ class Medico extends Controller
 
             if ($this->medicoModel->delete($data)) {
                 echo 'borrado';
-                /* $data = [];
-                $this->renderView('Inicio', $data); */
+               
             } else {
                 die('ocurrió un error !');
             };
@@ -126,18 +126,18 @@ class Medico extends Controller
             ];
             $this->renderView('Medico/MedicoBorrar', $data);
         }
-    }
+    } */
 
-    public function ImprimirListado()
+    /*  public function ImprimirListado()
     {
         $data = $this->medicoModel->getAll();
         //$data = [];
         $this->renderView('Medico/rptListadoMedicos', $data);
-    }
+    } */
 
 
     //buscar resgistros por apellido
-    public function search()
+    /*   public function search()
     {
         $data = [
             "valor" => $_POST['valor']
@@ -145,5 +145,5 @@ class Medico extends Controller
 
         $data = $this->medicoModel->search($data);
         $this->renderView('Medico/MedicoInicio', $data);
-    }
+    } */
 }

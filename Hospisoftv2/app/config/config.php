@@ -10,7 +10,7 @@ define('APPROOT', dirname(dirname(__FILE__)));
 
 // URL DE LA APP
 // define('URLROOT', 'http://www.eldominio.com/')
-define('URLROOT', 'http://localhost/Curso-PHP-master/Hospisoftv2/');
+define('URLROOT', 'http://localhost:8080/Curso-PHP/Hospisoftv2/');
 //NOMBRE DE LA APLICACION
 define('SITENAME', 'Hospital LOURDES S.A.');
 

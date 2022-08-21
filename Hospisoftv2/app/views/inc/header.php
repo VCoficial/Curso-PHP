@@ -48,15 +48,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo URLROOT; ?>Medico"">
+                            <a class="nav-link" href="<?php echo URLROOT; ?>Medico">
                                 <i class=" bi bi-person-bounding-box"></i>
                                 Medicos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="<?php echo URLROOT; ?>Formula">
                                 <i class="bi bi-file-earmark-text"></i>
-                                Historias Clinicas
+                                Crear Formula
                             </a>
                         </li>
 
@@ -70,8 +70,8 @@
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="bi bi-printer"></i>
+                            <a class="nav-link" href="<?php echo URLROOT; ?>Paciente/ImprimirListado"">
+                                <i class=" bi bi-printer"></i>
                                 Listado Pacientes
                             </a>
                         </li>

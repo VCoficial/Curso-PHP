@@ -33,6 +33,8 @@
                             <option>Medicina General</option>
                             <option>Internista</option>
                             <option>Dermatólogia</option>
+                            <option>Podologia</option>
+                            <option>Proctologia</option>
                             <option>Ginecologia</option>
                         </select>
                         <label for="Estado" class="form-label">Vinculación con la clinica ?</label>

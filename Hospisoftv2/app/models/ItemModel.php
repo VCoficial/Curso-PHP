@@ -1,7 +1,7 @@
 <?php
 
 //modelo correspondiente a cada controlador
-class MedicoModel
+class ItemModel
 {
 
     private $db;
@@ -15,22 +15,21 @@ class MedicoModel
     //retorna todos los registros
     public function getAll()
     {
-        $this->db->query("SELECT * FROM medico");
+        $this->db->query("SELECT * FROM item");
         $resultSet = $this->db->getAll();
-        // $resultSet = json_encode($resultSet);
         return $resultSet;
     }
 
     // retorna un registro de acuerdo al id
-    public function getOne($id)
+    /*  public function getOne($id)
     {
         $this->db->query("SELECT * FROM medico where idMedico =:id");
         $this->db->bind(':id', $id);
         $resultSet = $this->db->getOne();
-        return $resultSet;
+         return $resultSet;
     }
     // agrega un registro
-    public function add($data)
+  /*   public function add($data)
     {
         $this->db->query("INSERT INTO medico(nombreMedico,apellidosMedico,emailMedico,especialidadMedico) VALUES (:nombreMedico,:apellidosMedico,:emailMedico,:especialidadMedico) ");
         //bindiamos
@@ -44,9 +43,9 @@ class MedicoModel
         } else {
             return false;
         }
-    }
+    } */
     //actualiza un registro
-    public function update($data)
+    /*   public function update($data)
     {
         $this->db->query('UPDATE medico SET nombreMedico=:nombreMedico,
         apellidosMedico=:apellidosMedico,emailMedico=:emailMedico,
@@ -67,11 +66,11 @@ class MedicoModel
             return false;
         }
     }
-
+ */
 
     //borra un registro de forma REAL
 
-    public function delete($data)
+    /*  public function delete($data)
     {
         $this->db->query('DELETE FROM medico WHERE idMedico = :idMedico');
         //vinculacion de los datos
@@ -84,24 +83,24 @@ class MedicoModel
         } else {
             return false;
         }
-    }
+    } */
 
     //buscar por apellido
-    public function search($data)
+    /*  public function search($data)
     {
         $this->db->query("SELECT * FROM medico WHERE apellidosMedico LIKE CONCAT(:nombreMedico,'%')");
         $valor = $data['valor'];
         $this->db->bind(':nombreMedico', $valor);
         $resultSet = $this->db->getAll();
         return $resultSet;
-    }
+    } */
 
-    public function rowCount()
+    /*  public function rowCount()
     {
         $this->db->query("SELECT * FROM medico");
         $resultSet = $this->db->rowCount();
         return $resultSet;
-    }
+    } */
 
 
     /**
@@ -109,13 +108,13 @@ class MedicoModel
      *  Devuelve total medicos para la paginacion
      * @return void
      */
-    public function totalMedicos()
+    /*   public function totalMedicos()
     {
         $this->db->query("SELECT COUNT(idMedico) as numevents FROM medico");
         $resultSet = $this->db->getOne();
         return  $resultSet;
     }
-
+ */
 
     /**
      * totalPages
@@ -124,13 +123,13 @@ class MedicoModel
      * @param  mixed $offset
      * @return void
      */
-    public function totalPages($perPage, $offset)
+    /*  public function totalPages($perPage, $offset)
     {
         $this->db->query("SELECT * from medico ORDER BY apellidosMedico ASC LIMIT :limit OFFSET :offset");
         $this->db->bind(":limit", $perPage);
         $this->db->bind(":offset", $offset);
         $resultSet = $this->db->getAll();
         return $resultSet;
-    }
+    } */
     //=========================== paginacion  =====================
 }

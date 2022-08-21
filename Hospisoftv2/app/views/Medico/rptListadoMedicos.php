@@ -48,5 +48,6 @@ foreach ($data as $medico) {
     $pdf->Row(array($nombre, $apellido, utf8_decode($especialidad)));
 };
 
+$pdf->footer();
 //Mostramos el documento pdf
 $pdf->Output('I');

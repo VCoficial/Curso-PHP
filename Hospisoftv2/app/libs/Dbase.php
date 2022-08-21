@@ -50,11 +50,11 @@ class Dbase
                     break;
                 default:
                     $type = PDO::PARAM_STR;
-                    break;
             }
         }
         $this->stmt->bindValue($parameter, $value, $type);
     }
+
 
 
     //procesar la consultas y aplicar el prepare

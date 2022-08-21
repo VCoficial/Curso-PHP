@@ -1,0 +1,10 @@
+body{    
+    font-size: 0.75rem;
+}
+h3{
+    text-align: center;
+}
+span titulo{
+    text-align: center;
+    border: solid 1px rgb(190, 188, 188);
+}
