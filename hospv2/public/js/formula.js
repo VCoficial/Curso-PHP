@@ -1,4 +1,4 @@
-const URLROOT = "http://localhost/ejemphp/hospv2/";
+/* const URLROOT = "http://localhost/ejemphp/hospv2/";
 
 function agregarDetalle(id) {
   let detalle = document.getElementById("detalle");
@@ -60,3 +60,4 @@ llenarMedico();
   false
 );
  */
+Swal.fire("Buen Trabajo!", "Da click en el boton!", "success");

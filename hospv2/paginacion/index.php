@@ -1,6 +1,6 @@
 <?php
 require_once 'bd.php';
-$limite = 20; //registros a mostrar por pantalla
+$limite = 100; //registros a mostrar por pantalla
 $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
 $inicio = ($pagina - 1) * $limite;
 $sql = "SELECT * FROM paciente LIMIT $inicio,$limite";

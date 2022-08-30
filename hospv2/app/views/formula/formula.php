@@ -1,4 +1,5 @@
 <?php require_once APPROOT . "/views/inc/header.php"; ?>
+
 <div class="row">
 
     <div class="col-md-12">
@@ -80,6 +81,7 @@
 <!-- fin del contenedor principal -->
 </main>
 
-
+<script src="<?php echo URLROOT; ?>css/sweetalert2.min.css"></script>
+<script src="<?php echo URLROOT; ?>js/sweetalert2.all.min.js"></script>
 <script src="<?php echo URLROOT; ?>js/formula.js"></script>
 <?php require_once APPROOT . "/views/inc/footer.php"; ?>

@@ -13,7 +13,9 @@ class Paciente extends Controller
     {
         $data = $this->pacienteModel->getAll();
         //$data = [];
-        $this->renderView('Paciente/PacienteInicio', $data);
+        //$this->renderView('Paciente/PacienteInicio', $data);
+         $data = json_encode($data);
+        echo $data;
     }
 
     public function add()
@@ -38,5 +40,18 @@ class Paciente extends Controller
     public function search()
     {
         echo "buscando medico";
+    }
+
+    /**
+     * consultar : ejemplo sencillo de API REST
+     *
+     * @return void
+     */
+    public function consultar()
+    {
+        $data = $this->pacienteModel->getAll();
+        //$data = [];
+        $data = json_encode($data);
+        echo $data;
     }
 }
