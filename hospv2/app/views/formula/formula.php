@@ -13,7 +13,7 @@
                     <div class="col-2">
                         <div class="mb-3">
                             <label for="" class="form-label">Fecha:</label>
-                            <input type="date" name="fechaFormula" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
+                            <input type="date" name="fechaFormula" id="" class="form-control form-control-sm" required>
 
                         </div>
                     </div>
@@ -21,7 +21,7 @@
                         <div class="mb-3">
                             <label for="" class="form-label">Medico:</label>
 
-                            <select class="form-control" name="item" id="medico">
+                            <select class="form-control form-control-sm" name="item" id="medico">
                             </select>
 
 
@@ -31,7 +31,7 @@
                         <div class="mb-3">
                             <label for="" class="form-label">Paciente:</label>
 
-                            <select class="form-control" name="item" id="paciente">
+                            <select class="form-control form-control-sm" name="item" id="paciente">
                             </select>
 
 
@@ -39,13 +39,12 @@
                     </div>
                     <hr>
                 </div>
-                <div class="row mb-1">
-                    <div class="col-1"><label for="">Item:</label></div>
-                    <div class="col-4">
-                        <select class="form-control" name="item" id="valorOption">
-                        </select>
+                <div class="row mb-2">
+                    <div class="col-2"><label for="">Item:</label></div>
+                    <div class="col-4"> <button type="button" class="btn btn-warning btn-sm" id="btnAgregar" onclick="agregarDetalle()">
+                            + Item
+                        </button>
                     </div>
-                    <div class="col-6 "> <button type="button" class="btn btn-success" onclick="agregarDetalle()"> + </button></div>
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -78,10 +77,16 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Modal -->
+
+
 <!-- fin del contenedor principal -->
 </main>
 
-<script src="<?php echo URLROOT; ?>css/sweetalert2.min.css"></script>
-<script src="<?php echo URLROOT; ?>js/sweetalert2.all.min.js"></script>
+
 <script src="<?php echo URLROOT; ?>js/formula.js"></script>
+
 <?php require_once APPROOT . "/views/inc/footer.php"; ?>

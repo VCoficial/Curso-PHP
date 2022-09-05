@@ -7,30 +7,35 @@
 
 </h4>
 
-<table class="table table-striped table-inverse table-responsive table-sm">
+<table class="table table-striped table-inverse table-responsive table-sm" id="tblPacientes">
     <thead class="thead-inverse">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Apellidos</th>
+            <th>Email</th>
+            <th>Telefono</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($data as $paciente) : ?>
-            <tr>
-                <td> <?php echo $paciente->idPaciente; ?></td>
-                <td><?php echo $paciente->nombrePaciente; ?></td>
-                <td><?php echo $paciente->apellidosPaciente; ?></td>
-                <td><a class="btn btn-primary btn-sm" href="http://"><i class="bi bi-pencil-square"></i></a></td>
-                <td><a class="btn btn-danger btn-sm" href="http://"><i class="bi bi-trash3"></i></a></td>
-            </tr>
-        <?php endforeach; ?>
+
     </tbody>
+    <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Telefono</th>
+        </tr>
+    </tfoot>
 </table>
 
 <!-- fin del contenedor principal -->
 </main>
 
-
-
+<script src="<?php echo URLROOT; ?>js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo URLROOT; ?>jQuery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="<?php echo URLROOT; ?>DataTables-1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo URLROOT; ?>js/paciente.js"></script>
 <?php require_once APPROOT . "/views/inc/footer.php"; ?>

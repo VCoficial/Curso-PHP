@@ -6,6 +6,10 @@ class Medico extends Controller
 
     public function __construct()
     {
+
+        if (!isset($_SESSION['id_user'])) {
+            redirect('User/login');
+        };
         //configuramos el modelo correspondiente a este controlador
         $this->medicoModel = $this->getModel('MedicoModel');
     }
@@ -34,7 +38,7 @@ class Medico extends Controller
             'currentPage' => $currentPage
 
         ];
-
+        //redirect('Medico/MedicoInicio');
         $this->renderView('Medico/MedicoInicio', $data);
     }
 
@@ -48,11 +52,14 @@ class Medico extends Controller
     public function add()
     {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            // sanitizamos los datos
+            $_POST = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
             $data = [
-                'nombreMedico' => $_POST['nombreMedico'],
-                'apellidosMedico' => $_POST['apellidosMedico'],
-                'emailMedico' => $_POST['emailMedico'],
-                'especialidadMedico' => $_POST['especialidadMedico']
+                'nombreMedico' => trim($_POST['nombreMedico']),
+                'apellidosMedico' => trim($_POST['apellidosMedico']),
+                'emailMedico' => trim($_POST['emailMedico']),
+                'especialidadMedico' => trim($_POST['especialidadMedico'])
             ];
             $resultado = $this->medicoModel->add($data);
             if ($resultado) {
@@ -71,7 +78,13 @@ class Medico extends Controller
         }
     }
 
-
+    //TODO: falta la validacion de entrada de datos    
+    /**
+     * update
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function update($id)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -85,6 +98,7 @@ class Medico extends Controller
 
             if ($this->medicoModel->update($data)) {
                 $data = [];
+                //FIXME: esto pinta la vista con la tabla vacia revisar el helper de url   
                 $this->renderView('Inicio', $data);
             } else {
                 die('ocurrió un error en la inserción !');

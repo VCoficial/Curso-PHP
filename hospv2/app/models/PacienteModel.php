@@ -17,4 +17,11 @@ class PacienteModel
         $resultSet = $this->db->getAll();
         return $resultSet;
     }
+
+    public function getTable()
+    {
+        $this->db->query("SELECT idPaciente,nombrePaciente,apellidosPaciente,emailPaciente,telefonoPaciente FROM paciente");
+        $resultSet = $this->db->getAll();
+        return $resultSet;
+    }
 }

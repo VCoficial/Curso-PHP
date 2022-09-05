@@ -11,11 +11,9 @@ class Paciente extends Controller
     }
     public function index()
     {
-        $data = $this->pacienteModel->getAll();
-        //$data = [];
-        //$this->renderView('Paciente/PacienteInicio', $data);
-         $data = json_encode($data);
-        echo $data;
+        //$data = $this->pacienteModel->getAll();
+        $data = [];
+        $this->renderView('Paciente/PacienteInicio', $data);
     }
 
     public function add()
@@ -43,15 +41,13 @@ class Paciente extends Controller
     }
 
     /**
-     * consultar : ejemplo sencillo de API REST
-     *
+     * dataTable
+     * devuelve la data en un objeto JSON :: necesario para que JS lo capture y lo manipule en el F.END
      * @return void
      */
-    public function consultar()
+    public function dataTable()
     {
-        $data = $this->pacienteModel->getAll();
-        //$data = [];
-        $data = json_encode($data);
-        echo $data;
+        $paciente = $this->pacienteModel->getTable();
+        echo json_encode($paciente);
     }
 }

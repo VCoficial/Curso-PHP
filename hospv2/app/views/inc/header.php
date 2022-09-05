@@ -8,12 +8,16 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Panel de Control HOSPISOFT</title>
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>DataTables-1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>css/bootstrap-icons.css">
     <link rel="icon" type="image/png" href="<?php echo URLROOT; ?>img/logo.png">
     <!-- <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" ></script> -->
     <link href="<?php echo URLROOT; ?>css/dashboard.css" rel="stylesheet">
 </head>
+<?php
+session_start();
+?>
 
 <body>
 
@@ -22,12 +26,16 @@
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-toggles"></i>
         </button>
-        <!--    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link px-3 text-white" href="#">Sign out</a>
-            </div>
-        </div>
+
+
+        <ul class="list-inline">
+            <li class="list-inline-item"> <span class="text-end text-white me-2 fst-italic"><?php echo  $_SESSION['usuario']; ?></span></li>
+            <li class="list-inline-item"> <a class="text-decoration-none  fw-bold text-white text-end me-2" href="<?php echo URLROOT; ?>User/Logout"> Cerrar Sesión </a></li>
+        </ul>
+
+
+
+
     </header>
 
     <div class="container-fluid">

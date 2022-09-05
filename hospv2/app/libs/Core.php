@@ -10,7 +10,7 @@ P.ej: medico/crearFormulaMedica/$id
 class Core
 {
     //setear los controladores, metodos y parametros iniciales del MVC
-    protected $defaultController = 'Inicio';
+    protected $defaultController = 'User';
     protected $defaultMethod = 'index';
     protected $parameters = [];
 

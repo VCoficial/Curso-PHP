@@ -3,7 +3,7 @@
 
 require_once 'config/config.php';
 
-//TODO: CORREGIR ESTE CODIGO CON AUTOCARGA DE SPL
+require_once 'helpers/url_helper.php';
 
 
 //Carga de las clases de forma tradicional
