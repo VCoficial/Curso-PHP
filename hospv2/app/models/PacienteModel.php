@@ -13,14 +13,7 @@ class PacienteModel
 
     public function getAll()
     {
-        $this->db->query("SELECT * FROM paciente");
-        $resultSet = $this->db->getAll();
-        return $resultSet;
-    }
-
-    public function getTable()
-    {
-        $this->db->query("SELECT idPaciente,nombrePaciente,apellidosPaciente,emailPaciente,telefonoPaciente FROM paciente");
+        $this->db->query("SELECT idPaciente,nombrePaciente,apellidosPaciente, emailPaciente,telefonoPaciente, movilPaciente, fechaNacimiento FROM paciente");
         $resultSet = $this->db->getAll();
         return $resultSet;
     }

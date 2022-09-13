@@ -8,11 +8,18 @@ class Formula extends Controller
     {
         //configuramos el modelo correspondiente a este controlador
         $this->medicoModel = $this->getModel('MedicoModel');
+        $this->itemModel = $this->getModel('ItemModel');
     }
     public function index()
     {
 
         $data = [];
         $this->renderView('formula/formula', $data);
+    }
+
+    public function getItems()
+    {
+        $items = $this->itemModel->getAll();
+        echo json_encode($items);
     }
 }

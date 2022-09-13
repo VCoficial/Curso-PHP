@@ -1,7 +1,7 @@
 $(document).ready(function () {
-  $("#tblPacientes").DataTable({
+  $("#tblpaciente").DataTable({
     ajax: {
-      url: "http://localhost/php227/hospv2/Paciente/dataTable",
+      url: "http://localhost/Cphp/hospv2/Paciente/getAll",
       dataSrc: "",
     },
     columns: [
@@ -10,6 +10,8 @@ $(document).ready(function () {
       { data: "apellidosPaciente" },
       { data: "emailPaciente" },
       { data: "telefonoPaciente" },
+      { data: "movilPaciente" },
+      { data: "fechaNacimiento" },
     ],
   });
 });

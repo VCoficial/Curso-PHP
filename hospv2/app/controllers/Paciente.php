@@ -11,7 +11,7 @@ class Paciente extends Controller
     }
     public function index()
     {
-        //$data = $this->pacienteModel->getAll();
+        /*  $data = $this->pacienteModel->getAll(); */
         $data = [];
         $this->renderView('Paciente/PacienteInicio', $data);
     }
@@ -39,15 +39,11 @@ class Paciente extends Controller
     {
         echo "buscando medico";
     }
-
-    /**
-     * dataTable
-     * devuelve la data en un objeto JSON :: necesario para que JS lo capture y lo manipule en el F.END
-     * @return void
-     */
-    public function dataTable()
+    public function getAll()
     {
-        $paciente = $this->pacienteModel->getTable();
-        echo json_encode($paciente);
+        $paciente = $this->pacienteModel->getAll();
+        //$data = [];
+        $paciente = json_encode($paciente);
+        echo $paciente;
     }
 }

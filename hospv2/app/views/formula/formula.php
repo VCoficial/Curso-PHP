@@ -5,11 +5,19 @@
     <div class="col-md-12">
         <br>
         <div class="card">
-            <div class="card-header bg-primary bg-gradient text-white">
-                <h5>Crear Fórmula</h5>
+            <div class="card-header bg-info bg-gradient text-white">
+                <button type="button" class="btn btn-primary shadow-sm">Crear Fórmula</button>
+
             </div>
             <div class="card-body">
                 <div class="row">
+                    <div class="col-2">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Consecutivo:</label>
+                            <input type="text" name="fechaFormula" id="" class="form-control form-control-sm" required>
+
+                        </div>
+                    </div>
                     <div class="col-2">
                         <div class="mb-3">
                             <label for="" class="form-label">Fecha:</label>
@@ -20,29 +28,50 @@
                     <div class="col-5">
                         <div class="mb-3">
                             <label for="" class="form-label">Medico:</label>
-
-                            <select class="form-control form-control-sm" name="item" id="medico">
+                            <select class="form-control form-control-sm" name="medico" id="medico">
                             </select>
 
 
                         </div>
+                    </div>
+
+                    <hr>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Identificación:</label>
+
+                            <select class="form-control form-control-sm" name="paciente" id="paciente">
+                            </select>
+                        </div>
+
                     </div>
                     <div class="col-5">
                         <div class="mb-3">
                             <label for="" class="form-label">Paciente:</label>
 
-                            <select class="form-control form-control-sm" name="item" id="paciente">
+                            <select class="form-control form-control-sm" name="paciente" id="paciente">
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="" class="form-label">edad:</label>
+
+                            <select class="form-control form-control-sm" name="paciente" id="paciente">
                             </select>
 
 
                         </div>
                     </div>
-                    <hr>
+
                 </div>
                 <div class="row mb-2">
-                    <div class="col-2"><label for="">Item:</label></div>
-                    <div class="col-4"> <button type="button" class="btn btn-warning btn-sm" id="btnAgregar" onclick="agregarDetalle()">
-                            + Item
+                    <div class="col-4">
+                        <button type="button" class="btn btn-primary btn-sm shadow-sm" data-bs-toggle="modal" data-bs-target="#items">
+                            Agregar Items <i class="bi bi-plus-circle"></i>
                         </button>
                     </div>
                 </div>
@@ -59,7 +88,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-
 
                             </tbody>
                         </table>
@@ -80,13 +108,67 @@
 
 
 
+
+
 <!-- Modal -->
+<div class="modal fade" id="items" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Items</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <table class="table table-bordered table-sm table-hover" id="tblItems">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Agregar</th>
+                            <th>Id</th>
+                            <th>Descripción del Item</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Agregar</th>
+                            <th>Id</th>
+                            <th>Descripción del Item</th>
+
+                        </tr>
+
+                    </tfoot>
+                </table>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 
 <!-- fin del contenedor principal -->
 </main>
 
-
+<script src="<?php echo URLROOT; ?>js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo URLROOT; ?>jQuery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="<?php echo URLROOT; ?>DataTables-1.12.1/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/sweetalert2.min.css">
+<!-- <script src="<?php //echo URLROOT; 
+                    ?>js/sweetalert2.all.min.js"></script> -->
 <script src="<?php echo URLROOT; ?>js/formula.js"></script>
 
 <?php require_once APPROOT . "/views/inc/footer.php"; ?>

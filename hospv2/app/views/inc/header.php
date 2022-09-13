@@ -8,12 +8,16 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Panel de Control HOSPISOFT</title>
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>DataTables-1.12.1/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>DataTables-1.12.1/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>css/bootstrap-icons.css">
     <link rel="icon" type="image/png" href="<?php echo URLROOT; ?>img/logo.png">
     <!-- <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" ></script> -->
     <link href="<?php echo URLROOT; ?>css/dashboard.css" rel="stylesheet">
+
+
+    <!-- <link href="DataTables/datatables.min.css" rel="stylesheet"> -->
+
 </head>
 <?php
 session_start();
@@ -78,7 +82,7 @@ session_start();
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo URLROOT; ?>Paciente/ImprimirListado"">
+                            <a class="nav-link" href="<?php echo URLROOT; ?>Paciente/ImprimirListado">
                                 <i class=" bi bi-printer"></i>
                                 Listado Pacientes
                             </a>

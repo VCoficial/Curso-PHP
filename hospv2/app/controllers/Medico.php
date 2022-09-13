@@ -7,39 +7,40 @@ class Medico extends Controller
     public function __construct()
     {
 
-        if (!isset($_SESSION['id_user'])) {
+        /* if (!isset($_SESSION['id_user'])) {
             redirect('User/login');
-        };
+        }; */
         //configuramos el modelo correspondiente a este controlador
         $this->medicoModel = $this->getModel('MedicoModel');
     }
 
-    public function getAll()
-    {
-        $data = $this->medicoModel->getAll();
-        $data = json_encode($data);
-        echo $data;
-    }
 
     //carga tabla inicial con paginación
-    public function index($currentPage = 1)
+    //public function index(//$currentPage = 1)
+    public function index()
     {
-        $perPage = 15;
+        /*    $perPage = 15;
         $totalCount = $this->medicoModel->totalMedicos();
         $pagination = new Paginator($currentPage, $perPage, $totalCount);
         $offset = $pagination->offset();
         $medicos = $this->medicoModel->totalPages($perPage, $offset);
-
+ */
         $data = [
-            'medicos' => $medicos,
+            /*      'medicos' => $medicos,
             'previous' => $pagination->previous(),
             'next' => $pagination->next(),
             'total' => $pagination->totalPages(),
-            'currentPage' => $currentPage
-
-        ];
+            'currentPage' => $currentPage */];
         //redirect('Medico/MedicoInicio');
         $this->renderView('Medico/MedicoInicio', $data);
+    }
+
+
+    public function getAll()
+    {
+        $data = $this->medicoModel->getAll();
+        echo json_encode($data);
+        // print json_encode($data);
     }
 
     public function formAdd()
