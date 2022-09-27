@@ -11,6 +11,7 @@ class MedicoModel
         $this->db = new Dbase;
     }
 
+    
 
     //retorna todos los registros
     public function getAll()

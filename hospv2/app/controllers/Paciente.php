@@ -1,9 +1,7 @@
 <?php
 
-
 class Paciente extends Controller
 {
-
     public function __construct()
     {
         //configuramos el modelo correspondiente a este controlador

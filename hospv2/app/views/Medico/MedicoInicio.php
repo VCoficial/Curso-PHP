@@ -5,7 +5,7 @@ error_reporting(0);
 <div class="row mt-3">
     <div class="col-12">
         <div class="card">
-            <div class="card-header bg-primary bg-gradient text-white">
+            <div class="card-header">
                 <h5>Médicos Disponibles</h5>
             </div>
             <div class="card-body">

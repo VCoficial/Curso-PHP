@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $("#tblpaciente").DataTable({
     ajax: {
-      url: "http://localhost/Cphp/hospv2/Paciente/getAll",
+      url: "http://localhost/Aphp/hospv2/Paciente/getAll",
       dataSrc: "",
     },
     columns: [

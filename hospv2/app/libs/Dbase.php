@@ -22,7 +22,7 @@ class Dbase
     {
         //FIXME: agregar opciones de mysql
         //$dsn : almacenamos la ruta
-        $dsn = "mysql:host=" . $this->host . ";dbname=" . $this->bdatos;
+        $dsn = "mysql:host=" . $this->host . ";dbname=" . $this->bdatos . ";charset=utf8";
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->password);
         } catch (PDOException $e) {
@@ -46,6 +46,9 @@ class Dbase
                     $type = PDO::PARAM_BOOL;
                     break;
                 case is_null($value):
+                    $type = PDO::PARAM_NULL;
+                    break;
+                case is_array($value):
                     $type = PDO::PARAM_NULL;
                     break;
                 default:
@@ -87,5 +90,10 @@ class Dbase
     {
         $this->execute();
         return $this->stmt->rowCount();
+    }
+    public function lastInsertId()
+    {
+        //$this->execute();
+        return $this->dbh->lastInsertId();
     }
 }

@@ -1,4 +1,5 @@
 {
-  "editor.fontFamily": "Fira Code Light",
-  "editor.fontSize": 14
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true
 }

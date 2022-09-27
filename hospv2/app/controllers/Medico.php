@@ -40,7 +40,7 @@ class Medico extends Controller
     {
         $data = $this->medicoModel->getAll();
         echo json_encode($data);
-        // print json_encode($data);
+        
     }
 
     public function formAdd()
