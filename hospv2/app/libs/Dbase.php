@@ -49,7 +49,7 @@ class Dbase
                     $type = PDO::PARAM_NULL;
                     break;
                 case is_array($value):
-                    $type = PDO::PARAM_NULL;
+                    $type = PDO::PARAM_INT;
                     break;
                 default:
                     $type = PDO::PARAM_STR;

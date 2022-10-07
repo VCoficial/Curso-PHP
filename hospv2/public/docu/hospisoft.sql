@@ -25,9 +25,12 @@ CREATE TABLE IF NOT EXISTS `detalleformula` (
   `cantidad` int(11) NOT NULL,
   `posologia` varchar(250) DEFAULT NULL,
   `consecutivoFormula` int(11) DEFAULT NULL,
+  `idItem` int(11) NOT NULL,
   PRIMARY KEY (`idetalle`),
   KEY `consecutivoFormula` (`consecutivoFormula`),
-  CONSTRAINT `detalleformula_ibfk_1` FOREIGN KEY (`consecutivoFormula`) REFERENCES `formula` (`consecutivo`)
+  KEY `fk_item` (`idItem`),
+  CONSTRAINT `detalleformula_ibfk_1` FOREIGN KEY (`consecutivoFormula`) REFERENCES `formula` (`consecutivo`),
+  CONSTRAINT `fk_item` FOREIGN KEY (`idItem`) REFERENCES `item` (`idItem`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table hospisoft.detalleformula: ~0 rows (approximately)
@@ -42,9 +45,33 @@ CREATE TABLE IF NOT EXISTS `formula` (
   KEY `idpaciente` (`idpaciente`),
   CONSTRAINT `formula_ibfk_1` FOREIGN KEY (`idpaciente`) REFERENCES `paciente` (`idPaciente`),
   CONSTRAINT `formula_ibfk_2` FOREIGN KEY (`idpaciente`) REFERENCES `paciente` (`idPaciente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
--- Dumping data for table hospisoft.formula: ~0 rows (approximately)
+-- Dumping data for table hospisoft.formula: ~21 rows (approximately)
+INSERT INTO `formula` (`consecutivo`, `fecha`, `idpaciente`, `idmedico`) VALUES
+	(1, '2022-09-22', 1, 4),
+	(2, '2022-09-22', 1, 4),
+	(3, '2022-09-22', 1, 4),
+	(4, '2022-09-22', 1, 4),
+	(5, '2022-09-22', 1, 4),
+	(6, '2022-09-22', 1, 5),
+	(7, '2022-09-22', 1, 5),
+	(8, '2022-09-22', 1, 4),
+	(9, '2022-09-26', 1, 4),
+	(10, '2022-09-26', 1, 4),
+	(11, '2022-09-26', 1, 4),
+	(12, '2022-09-26', 1, 6),
+	(13, '2022-09-26', 1, 6),
+	(14, '2022-09-26', 1, 6),
+	(15, '2022-09-26', 1, 6),
+	(16, '2022-09-26', 1, 6),
+	(17, '2022-09-26', 1, 6),
+	(18, '2022-09-05', 1, 4),
+	(19, '2022-09-05', 1, 4),
+	(20, '2022-09-05', 1, 4),
+	(21, '2022-09-05', 1, 4),
+	(22, '2022-09-26', 1, 4),
+	(23, '2022-09-27', 6, 4);
 
 -- Dumping structure for table hospisoft.item
 CREATE TABLE IF NOT EXISTS `item` (
